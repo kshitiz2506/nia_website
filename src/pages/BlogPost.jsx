@@ -84,7 +84,7 @@ export default function BlogPost() {
           <p className="mt-3 text-sm leading-relaxed text-white/70">{description}</p>
           <Link
             to={buttonHref}
-            className="btn-gold btn-gold--md mt-6"
+            className="btn-gold btn-gold--md mt-6 inline-flex items-center justify-center bg-nia-gold px-5 py-3 text-nia-dark"
           >
             {buttonLabel}
             <ArrowRightIcon className="h-4 w-4" />

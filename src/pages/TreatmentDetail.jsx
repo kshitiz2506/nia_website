@@ -97,7 +97,7 @@ export default function TreatmentDetail() {
 
               <Link
                 to="/contact"
-                className="btn-gold btn-gold--md mt-8 tracking-wide"
+                className="btn-gold btn-gold--md mt-8 inline-flex items-center justify-center bg-nia-gold px-5 py-3 text-nia-dark tracking-wide"
               >
                 Book a Consultation
                 <ArrowRightIcon className="h-4 w-4" />

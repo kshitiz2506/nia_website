@@ -41,13 +41,13 @@ export const staticPageSeo = {
   contact: {
     title: 'Contact Us',
     description:
-      'Get in touch with NIA for clinic appointments, course enrollment, or general inquiries. Call, email, or send us a message.',
+      'Get in touch with NIA for clinic appointments, NIIA course enrollment, or general inquiries. Call, email, or send us a message.',
     path: '/contact',
   },
   faqs: {
     title: 'FAQs',
     description:
-      'Frequently asked questions about NIA clinic treatments, institute programs, appointments, and patient care.',
+      'Frequently asked questions about NIA clinic treatments, NIIA institute programs, appointments, and patient care.',
     path: '/faqs',
   },
   gallery: {

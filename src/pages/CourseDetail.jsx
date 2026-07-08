@@ -19,6 +19,9 @@ function formatPrice(amount) {
 }
 
 function CurriculumItem({ module, isOpen, onToggle }) {
+  const hasDescriptionPoints =
+    Array.isArray(module.descriptionPoints) && module.descriptionPoints.length > 0
+
   return (
     <li className="overflow-hidden rounded-xl bg-white shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
       <div className="flex items-center gap-4 px-5 py-4">
@@ -44,9 +47,20 @@ function CurriculumItem({ module, isOpen, onToggle }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="border-t border-nia-dark/10 px-5 pb-4 pt-3 pl-[4.25rem] text-sm leading-relaxed text-nia-dark/70 sm:pl-[4.5rem]">
-            {module.description}
-          </p>
+          <div className="border-t border-nia-dark/10 px-5 pb-4 pt-3 pl-[4.25rem] sm:pl-[4.5rem]">
+            {hasDescriptionPoints ? (
+              <ul className="space-y-2 text-sm leading-relaxed text-nia-dark/70">
+                {module.descriptionPoints.map((point) => (
+                  <li key={point} className="flex items-start gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-nia-gold-dark/70" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm leading-relaxed text-nia-dark/70">{module.description}</p>
+            )}
+          </div>
         </div>
       </div>
     </li>
@@ -191,7 +205,7 @@ export default function CourseDetail() {
                 </div>
                 <Link
                   to={enrollHref}
-                  className="btn-gold btn-gold--md mt-6 w-full tracking-wide"
+                  className="btn-gold btn-gold--md mt-6 flex w-full items-center justify-center bg-nia-gold px-5 py-3 text-nia-dark tracking-wide"
                 >
                   {enrollLabel}
                   <ArrowRightIcon className="h-4 w-4" />

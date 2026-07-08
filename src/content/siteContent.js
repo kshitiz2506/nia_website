@@ -24,7 +24,7 @@ export const navLinks = {
     { label: 'Anti-Aging Treatments', href: '/clinic/anti-aging' },
     { label: 'Laser Treatments', href: '/clinic/laser' },
     { label: 'Body Contouring & Wellness', href: '/clinic/body' },
-    { label: 'Dermatological Services', href: '/clinic/dermatological' },
+    { label: 'Dermatology Services', href: '/clinic/dermatological' },
     { label: 'Cosmetic Procedures', href: '/clinic/cosmetic' },
     { label: 'Aesthetic Gynecology', href: '/clinic/aesthetic-gynecology' },
   ],
@@ -72,7 +72,7 @@ export const heroSlides = [
     heading: 'Your Journey to',
     headingAccent: 'Confidence',
     description:
-      'With 15+ years of experience and 25K+ happy patients, NIA is India\'s premier destination for dermatology and education.',
+      'With 15+ years of experience and 25K+ happy patients, NIIA is India\'s premier destination for dermatology and education.',
   },
   {
     id: 5,
@@ -117,7 +117,7 @@ export const institutePage = {
 export const instituteWhyTrainWithUs = {
   heading: 'Why Train With Us?',
   description:
-    'NIA combines clinical excellence with structured education — giving you the skills, confidence, and credentials to excel in aesthetic medicine.',
+    'NIIA combines clinical excellence with structured education — giving you the skills, confidence, and credentials to excel in aesthetic medicine.',
   points: [
     'Expert faculty with international training',
     'Hands-on clinical exposure',
@@ -225,7 +225,7 @@ const instituteCourseList = [
     id: 'aast',
     program: 'certificate',
     category: 'Certificate',
-    title: 'Advance Aesthetic Skin Technician Course (AAST)',
+    title: 'Advance Aesthetic Skin Technician Course( AAST)',
     description:
       'Your first step towards a career in aesthetic skincare. Gain practical expertise in skin analysis, facial treatments, laser assistance, and clinic protocols through hands-on training.',
     image: '/assets/images/courses/certificate.jpg',
@@ -235,44 +235,58 @@ const instituteCourseList = [
     price: 100000,
     curriculum: [
       {
-        title: 'Medi-Facials',
-        description:
-          'Radiofrequency, high frequency, electroporation, ultrasonic, and microdermabrasion techniques for advanced facial treatments.',
+        title: 'Medi-facials',
+        descriptionPoints: [
+          'Radiofrequency',
+          'High frequency',
+          'Electroporation',
+          'Ultrasonic',
+          'Microdermabrasion',
+        ],
       },
       {
-        title: 'Hydrafacial',
-        description:
-          'Hands-on training in hydrafacial protocols for deep cleansing, hydration, extraction, and skin rejuvenation.',
+        title: 'HydraFacial',
+        descriptionPoints: ['HydraFacial'],
       },
       {
-        title: 'Chemical Peels',
-        description:
-          'Lactic peel, pigmentation peel, hydration peel, acne peel, and combination peel selection and application.',
+        title: 'Chemical peels',
+        descriptionPoints: [
+          'Lactic peel',
+          'Pigmentation peel',
+          'Hydration peel',
+          'Acne peel',
+          'Combination peel',
+        ],
       },
       {
         title: 'Lasers',
-        description:
-          'Diode laser (hair reduction), Nd:YAG laser (acne healing), Q-switch laser (carbon facial), IPL (photofacial), and pigmentation laser.',
+        descriptionPoints: [
+          'Diode laser- hair reduction',
+          'Nd:yag laser: acne healing',
+          'Q-switch laser: carbon facial',
+          'IPL: photofacial',
+          'Pigmentation laser',
+        ],
       },
       {
         title: 'Microneedling',
-        description:
-          'Microneedling protocols for collagen induction, scar refinement, and overall skin texture improvement.',
+        descriptionPoints: ['Microneedling'],
       },
       {
-        title: 'BB Glow',
-        description:
-          'BB glow treatment techniques for instant radiance, even tone, and a natural semi-permanent foundation effect.',
+        title: 'Bb glow',
+        descriptionPoints: ['Bb glow'],
       },
       {
         title: 'Body Therapy',
-        description:
-          'Lymphatic balancer, lipo laser, cavitation, and body RF for non-invasive body contouring and wellness.',
+        descriptionPoints: [
+          'Lymphatic ballancer',
+          'Lipo laser',
+          'Cavitation & body Rf',
+        ],
       },
       {
-        title: 'Coolsculpt — Observation',
-        description:
-          'Clinical observation of Coolsculpt procedures, patient selection, and post-treatment care protocols.',
+        title: 'Coolsculpt- observation',
+        descriptionPoints: ['Coolsculpt- observation'],
       },
     ],
     highlights: [
@@ -322,6 +336,93 @@ const instituteCourseList = [
       'Expert faculty with international experience',
       'Career placement assistance',
       'Small batch sizes for personalized attention',
+    ],
+  },
+  {
+    id: 'cccc',
+    program: 'certificate',
+    category: 'Certificate',
+    title: 'Certificate Course in Clinical Cosmetology( CCCC)',
+    description:
+      'Master the science of advanced skin and hair treatments with practical exposure to modern aesthetic procedures and patient management.',
+    image: '/assets/images/courses/certificate.jpg',
+    duration: '1 Month',
+    format: 'On-Campus',
+    eligibility: 'BAMS, BUMS, BPT, BDS & BNYS',
+    price: 75000,
+    curriculum: [
+      {
+        title: 'Basic concept of skin',
+        descriptionPoints: [
+          'Skin Anatomy',
+          'Skin types & Classification',
+          'Skin Disorders, Diseases & Management',
+        ],
+      },
+      {
+        title: 'Trichology',
+        descriptionPoints: [
+          'Hair Anatomy',
+          'Hair Disorders & their Management',
+        ],
+      },
+      {
+        title: 'Medi-facials',
+        descriptionPoints: [
+          'RF',
+          'HydraFacial',
+          'Carbon facial',
+          'Ultrasonic',
+          'T-oxy',
+          'Oxygeneo',
+          'Dermalogica',
+          'Radiance Revival',
+          'Microdermabrasion',
+        ],
+      },
+      {
+        title: 'Chemical peels',
+        descriptionPoints: [
+          'Introduction',
+          'Mechanism',
+          'Types of acids used in aesthetic industry',
+          'Classification of peels- Superficial peel, Medium depth peel, Combination peel',
+          'Post care & Management',
+        ],
+      },
+      {
+        title: 'Basic concept of laser in skin aesthetic (LHR)',
+        descriptionPoints: [
+          'Introduction to LHR',
+          'Reaction mechanism',
+          'Chromophores',
+          'Tissue interaction',
+          'Clinical range of wavelength',
+          'Laser-Diode laser & NdYAG',
+          'Contraindications & management',
+        ],
+      },
+      {
+        title: 'EBD',
+        descriptionPoints: [
+          'Body contouring & skin tightening devices',
+          'Devices',
+          'RF & Ultrasound (cavitation)',
+          'Exilis',
+          'Coolsculpt',
+          'HIFU',
+          'Lymphatic Ballancer',
+          'TENS & G5 vibrator',
+          'I-LIPO',
+        ],
+      },
+    ],
+    highlights: [
+      'Eligibility focused for BAMS, BUMS, BPT, BDS & BNYS',
+      'One-month intensive clinical cosmetology program',
+      'Skin, trichology, peels, lasers, and EBD coverage',
+      'Hands-on orientation to modern aesthetic procedures',
+      'Practice setup and patient management exposure',
     ],
   },
   {
@@ -418,123 +519,528 @@ const instituteCourseList = [
     id: 'botox-masterclass',
     program: 'workshop',
     category: 'Workshop',
-    title: 'Botox & Fillers Masterclass',
+    title: 'Level 1 Filler Workshop',
     description:
-      'A focused weekend workshop on facial anatomy, injection techniques, and achieving natural-looking results.',
+      'Master the art of natural facial enhancement with structured hands-on training in filler fundamentals and safe aesthetic practice.',
     image: '/assets/images/courses/workshops.jpg',
-    duration: '2 Days',
+    duration: '1 Day',
     format: 'On-Campus',
     price: 25000,
     curriculum: [
       {
-        title: 'Upper Face Botox Mapping',
-        description: 'Forehead, glabella, and crow\'s feet injection points with dosing guidelines.',
+        title: 'Facial Anatomy for Fillers',
+        description: 'Understand facial planes, danger zones, and key anatomical landmarks for safe filler placement.',
       },
       {
-        title: 'Filler Techniques for Lips & Cheeks',
-        description: 'Volume enhancement and contouring techniques for natural facial balance.',
+        title: 'Patient Assessment',
+        description: 'Learn consultation flow, facial analysis, and candidacy evaluation for individualized treatment planning.',
       },
       {
-        title: 'Cannula vs. Needle Approaches',
-        description: 'When to use cannula versus needle techniques for safer filler placement.',
+        title: 'Core Filler Indications',
+        description: 'Hands-on guidance for mid-face rejuvenation, under-eye fillers, and lip augmentation.',
+      },
+      {
+        title: 'Injection Techniques',
+        description: 'Practice depth control, product placement, and injection patterns for natural outcomes.',
       },
       {
         title: 'Complication Prevention & Management',
-        description: 'Avoiding vascular complications and managing adverse events effectively.',
-      },
-      {
-        title: 'Live Demonstration & Hands-On Practice',
-        description: 'Watch expert demonstrations and practice injection techniques under supervision.',
+        description: 'Recognize early warning signs, minimize risks, and manage common filler-related complications.',
       },
     ],
     highlights: [
-      'Intensive 2-day immersive format',
-      'Live demonstrations by expert injectors',
-      'Hands-on practice on models',
-      'Small group for maximum learning',
-      'Certificate of participation',
+      'One-day practical workshop',
+      'Natural facial enhancement focus',
+      'Clinical patient assessment training',
+      'Hands-on filler technique practice',
+      'Safety-first complication protocols',
+    ],
+  },
+  {
+    id: 'advanced-filler-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Level 2 Advanced Filler Workshop',
+    description:
+      'Advanced contouring with precision and confidence for practitioners looking to upgrade to high-impact filler indications.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Advanced Indications',
+        description: 'Temple filler, jawline contouring, chin enhancement, and non-surgical nose reshaping.',
+      },
+      {
+        title: 'Advanced Facial Balancing',
+        description: 'Comprehensive profiling and proportion-based filler planning for harmonious outcomes.',
+      },
+      {
+        title: 'Cannula & Needle Techniques',
+        description: 'Technique selection by area, product rheology, and risk profile for safer advanced treatment.',
+      },
+    ],
+    highlights: [
+      'One-day advanced filler upskilling',
+      'High-value contouring indications',
+      'Precision-based facial balancing',
+      'Cannula and needle mastery',
+      'Confidence-driven practical learning',
+    ],
+  },
+  {
+    id: 'level-1-botox-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Level 1 Botox Workshop',
+    description:
+      'Precision in every injection with comprehensive hands-on training across full-face Botox applications.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Full-Face Rejuvenation',
+        description: 'Upper face Botox, crow\'s feet, bunny lines, lip Botox/lip flip, smile line correction, and masseter Botox.',
+      },
+      {
+        title: 'Meso Botox & Consultation',
+        description: 'Meso Botox concepts with structured patient consultation and expectation setting.',
+      },
+      {
+        title: 'Dosage & Dilution',
+        description: 'Dilution standards, unit planning, and dosing strategies for safe and effective outcomes.',
+      },
+    ],
+    highlights: [
+      'One-day injectable fundamentals',
+      'Comprehensive full-face approach',
+      'Consultation + planning workflow',
+      'Dosage and dilution confidence',
+      'Hands-on Botox technique training',
+    ],
+  },
+  {
+    id: 'thread-lift-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Thread Lift Workshop',
+    description:
+      'Lift without surgery through practical training in thread techniques, patient selection, and live demonstrations.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Facial Anatomy & Planning',
+        description: 'Thread vectors, anchoring zones, and anatomy-led lift design principles.',
+      },
+      {
+        title: 'Mono & Cog Threads',
+        description: 'Indications, insertion patterns, and practical use of mono threads and cog threads.',
+      },
+      {
+        title: 'Patient Selection & Live Practice',
+        description: 'Candidacy screening, live demonstrations, and supervised hands-on practice.',
+      },
+    ],
+    highlights: [
+      'One-day non-surgical lifting training',
+      'Mono and cog thread techniques',
+      'Anatomy-based treatment planning',
+      'Live demonstration exposure',
+      'Supervised practical learning',
+    ],
+  },
+  {
+    id: 'advanced-thread-lift-course',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Advanced Thread Lift Course',
+    description:
+      'Master advanced lifting techniques with specialized thread procedures and complication management strategies.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Advanced Procedures',
+        description: 'Nose thread lift, scalp threads, neck lift, and advanced facial lifting applications.',
+      },
+      {
+        title: 'Complication Management',
+        description: 'Prevention and management pathways for advanced thread-related challenges.',
+      },
+    ],
+    highlights: [
+      'Advanced one-day thread module',
+      'Specialized facial and neck indications',
+      'Nose and scalp thread applications',
+      'Complex case handling focus',
+      'Complication readiness training',
+    ],
+  },
+  {
+    id: 'skin-booster-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Skin Booster Workshop',
+    description:
+      'Revitalize skin from within through injectable skin quality protocols tailored to hydration and rejuvenation goals.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Skin Booster Modalities',
+        description: 'Clinical use of skin boosters, PDRN therapy, and NCTF for skin quality enhancement.',
+      },
+      {
+        title: 'Injection Protocols',
+        description: 'Depth, spacing, and technique guidance for safe and effective booster delivery.',
+      },
+      {
+        title: 'Patient Selection',
+        description: 'Identify ideal candidates and build realistic, staged treatment plans.',
+      },
+    ],
+    highlights: [
+      'One-day skin revitalization workshop',
+      'PDRN and NCTF protocol coverage',
+      'Injectable technique-focused training',
+      'Patient suitability guidance',
+      'Rejuvenation-centered treatment planning',
+    ],
+  },
+  {
+    id: 'exosome-regenerative-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Exosome & Regenerative Aesthetics Workshop',
+    description:
+      'Explore the future of skin and hair regeneration with practical regenerative medicine frameworks and protocols.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Exosome Therapy Fundamentals',
+        description: 'Core science, indications, and treatment positioning for exosome-based therapies.',
+      },
+      {
+        title: 'Regenerative Medicine Protocols',
+        description: 'Evidence-led protocol structuring for skin and hair regeneration cases.',
+      },
+      {
+        title: 'Combination Therapies',
+        description: 'Integrate exosomes with adjunct procedures for synergistic outcomes.',
+      },
+    ],
+    highlights: [
+      'One-day regenerative aesthetics focus',
+      'Exosome therapy clinical foundations',
+      'Protocol-driven treatment execution',
+      'Combination therapy strategies',
+      'Future-forward clinical upskilling',
+    ],
+  },
+  {
+    id: 'iv-drip-therapy-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'IV Drip Therapy Workshop',
+    description:
+      'Wellness through precision medicine with practical IV nutrition and vitamin drip training in clinical settings.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'IV Nutrition & Vitamin Drips',
+        description: 'Formulation concepts, treatment goals, and structured infusion planning.',
+      },
+      {
+        title: 'Safety Protocols',
+        description: 'Clinical safety checks, contraindication screening, and infusion best practices.',
+      },
+      {
+        title: 'Patient Selection & Applications',
+        description: 'Identify suitable candidates and map protocols to wellness indications.',
+      },
+    ],
+    highlights: [
+      'One-day precision wellness workshop',
+      'IV nutrition practical framework',
+      'Patient screening essentials',
+      'Safety-first infusion protocols',
+      'Clinical application orientation',
+    ],
+  },
+  {
+    id: 'laser-hair-reduction-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Laser Hair Reduction Workshop',
+    description:
+      'Become an expert in laser hair removal through practical, protocol-based, and safety-driven device training.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Laser Physics & Skin Typing',
+        description: 'Laser fundamentals, chromophore targeting, and Fitzpatrick-based treatment planning.',
+      },
+      {
+        title: 'Treatment Protocols',
+        description: 'Parameter selection, session planning, and endpoint assessment for safe outcomes.',
+      },
+      {
+        title: 'Practical Demonstrations & Safety',
+        description: 'Hands-on demonstrations with strict operational safety and post-care guidelines.',
+      },
+    ],
+    highlights: [
+      'One-day laser specialization module',
+      'Skin typing and parameter confidence',
+      'Protocol-based practical training',
+      'Safety and guideline emphasis',
+      'Real-world demonstration exposure',
+    ],
+  },
+  {
+    id: 'advanced-ebd-laser-course',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Advanced EBD Laser Course',
+    description:
+      'Master energy-based devices with advanced applications across resurfacing, pigmentation, scars, and combination plans.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '2 Days',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Advanced EBD Applications',
+        description: 'Fractional lasers, pigmentation treatments, scar revision, and skin resurfacing protocols.',
+      },
+      {
+        title: 'Combination Therapy Design',
+        description: 'Integrate EBD approaches with multimodal treatment planning for complex cases.',
+      },
+    ],
+    highlights: [
+      'Two-day advanced device immersion',
+      'Fractional and pigment expertise',
+      'Scar and resurfacing protocols',
+      'Combination treatment planning',
+      'High-level practical orientation',
+    ],
+  },
+  {
+    id: 'weight-loss-device-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Weight Loss Device Workshop',
+    description:
+      'Technology-driven body contouring workshop focused on device use, patient profiling, and protocol planning.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Body Contouring Devices',
+        description: 'Device categories, mechanism of action, and clinical indications for fat reduction.',
+      },
+      {
+        title: 'Fat Reduction Protocols',
+        description: 'Treatment sequencing and standardized outcome-focused contouring protocols.',
+      },
+      {
+        title: 'Assessment & Treatment Planning',
+        description: 'Patient assessment frameworks and personalized treatment plan design.',
+      },
+    ],
+    highlights: [
+      'One-day body contouring technology module',
+      'Device-specific fat reduction workflows',
+      'Structured patient assessment methods',
+      'Planning-driven treatment outcomes',
+      'Hands-on clinical relevance',
+    ],
+  },
+  {
+    id: 'glp1-weight-management-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'GLP-1 Weight Management Workshop',
+    description:
+      'Modern medical weight loss training centered on GLP-1 protocols, patient selection, and follow-up strategy.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'GLP-1 Medication Foundations',
+        description: 'Mechanism, indications, and practical framework for medical weight management.',
+      },
+      {
+        title: 'Selection, Dosage & Plans',
+        description: 'Patient selection, dosage protocols, and personalized weight management planning.',
+      },
+      {
+        title: 'Follow-Up Strategies',
+        description: 'Monitoring, adherence support, and long-term optimization of treatment outcomes.',
+      },
+    ],
+    highlights: [
+      'One-day modern obesity medicine module',
+      'GLP-1 protocol understanding',
+      'Selection and dosage confidence',
+      'Structured follow-up workflows',
+      'Clinical plan-building skills',
     ],
   },
   {
     id: 'chemical-peels',
     program: 'workshop',
     category: 'Workshop',
-    title: 'Advanced Chemical Peels Workshop',
+    title: 'Chemical Peel Masterclass',
     description:
-      'Hands-on training in peel selection, application protocols, and post-treatment care for diverse skin types.',
+      'Scientific approach to skin renewal through peel depth selection and indication-based protocol design.',
     image: '/assets/images/courses/certificate.jpg',
+    duration: '2 Days',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Peel Science & Depth Selection',
+        description: 'From superficial to advanced peels with indication-matched treatment depth.',
+      },
+      {
+        title: 'Clinical Indications',
+        description: 'Protocols for acne treatment, pigmentation, melasma, and anti-ageing concerns.',
+      },
+      {
+        title: 'Combination Treatments',
+        description: 'Layering and sequencing strategies to improve efficacy while preserving safety.',
+      },
+    ],
+    highlights: [
+      'Two-day scientific peel training',
+      'Superficial to advanced depth coverage',
+      'Acne, melasma, pigment protocols',
+      'Anti-ageing treatment frameworks',
+      'Combination strategy orientation',
+    ],
+  },
+  {
+    id: 'medifacial-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'MediFacial Workshop',
+    description:
+      'Professional facial protocols for every skin type with practical treatment customization training.',
+    image: '/assets/images/courses/diploma.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 15000,
     curriculum: [
       {
-        title: 'Peel Classification & Skin Typing',
-        description: 'Understand peel depths, Fitzpatrick skin types, and patient suitability criteria.',
+        title: 'Core MediFacial Protocols',
+        description: 'Hydra facial, oxygen facial, and carbon facial treatment workflows.',
       },
       {
-        title: 'Superficial & Medium Depth Peels',
-        description: 'Application techniques for glycolic, salicylic, TCA, and combination peels.',
+        title: 'Glow & Rejuvenation Plans',
+        description: 'Glow protocols tailored to skin concerns and event-driven treatment goals.',
       },
       {
-        title: 'Combination Peel Protocols',
-        description: 'Design peel sequences for acne, pigmentation, and anti-aging concerns.',
-      },
-      {
-        title: 'Pre & Post Peel Care',
-        description: 'Preparation regimens and aftercare to maximize results and minimize downtime.',
-      },
-      {
-        title: 'Live Application Workshop',
-        description: 'Hands-on peel application on models with faculty guidance and feedback.',
+        title: 'Treatment Customization',
+        description: 'Adapt facial protocols by skin type, concern profile, and tolerance.',
       },
     ],
     highlights: [
-      'Single-day focused intensive',
-      'Hands-on peel application practice',
-      'Protocols for Indian skin types',
-      'Product knowledge from leading brands',
-      'Take-home treatment guides',
+      'One-day facial protocol intensive',
+      'Hydra, oxygen, and carbon facial training',
+      'Skin-type specific customization',
+      'Protocol-based glow planning',
+      'Practical clinic readiness',
     ],
   },
   {
-    id: 'hifu-rf',
+    id: 'mesotherapy-workshop',
     program: 'workshop',
     category: 'Workshop',
-    title: 'HIFU & RF Skin Tightening Workshop',
+    title: 'Mesotherapy Workshop',
     description:
-      'Live demonstrations and practice on the latest non-invasive skin tightening technologies.',
-    image: '/assets/images/courses/diploma.jpg',
+      'Targeted skin and hair rejuvenation training with indication-based mesotherapy planning and injection methods.',
+    image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
-    format: 'Hybrid (Online + Clinical)',
-    price: 18000,
+    format: 'On-Campus',
+    price: 15000,
     curriculum: [
       {
-        title: 'HIFU Technology & Mechanism',
-        description: 'How focused ultrasound targets SMAS layers for non-surgical lifting and tightening.',
+        title: 'Skin & Hair Mesotherapy',
+        description: 'Use-case based mesotherapy protocols for skin rejuvenation and hair concerns.',
       },
       {
-        title: 'RF Microneedling Principles',
-        description: 'Radiofrequency microneedling for collagen induction, scars, and pore refinement.',
+        title: 'Injection Techniques',
+        description: 'Practical mesotherapy delivery methods with comfort and safety optimization.',
       },
       {
-        title: 'Treatment Parameters & Mapping',
-        description: 'Device settings, energy levels, and facial mapping for consistent outcomes.',
-      },
-      {
-        title: 'Combining HIFU with Other Modalities',
-        description: 'Treatment sequencing with fillers, threads, and other rejuvenation procedures.',
-      },
-      {
-        title: 'Live Demo & Clinical Observation',
-        description: 'Observe live treatments and discuss case selection with expert practitioners.',
+        title: 'Product Selection',
+        description: 'Choose mesotherapy cocktails based on indication, patient profile, and treatment goals.',
       },
     ],
     highlights: [
-      'Latest non-invasive device training',
-      'Hybrid theory session + clinical demo',
-      'Treatment mapping workshops',
-      'Expert-led live demonstrations',
-      'Certificate of attendance',
+      'One-day mesotherapy practical course',
+      'Skin and hair indication coverage',
+      'Technique-focused injectable training',
+      'Product selection frameworks',
+      'Outcome-driven protocol planning',
+    ],
+  },
+  {
+    id: 'advanced-trichology-workshop',
+    program: 'workshop',
+    category: 'Workshop',
+    title: 'Advanced Trichology Workshop',
+    description:
+      'Comprehensive hair restoration training covering diagnosis, regenerative therapies, and integrated treatment protocols.',
+    image: '/assets/images/courses/workshops.jpg',
+    duration: '2 Days',
+    format: 'On-Campus',
+    price: 15000,
+    curriculum: [
+      {
+        title: 'Hair Loss Diagnosis',
+        description: 'Structured evaluation of hair loss patterns and root-cause clinical assessment.',
+      },
+      {
+        title: 'Core Restoration Modalities',
+        description: 'PRP, GFC, mesotherapy, and exosome workflows for staged restoration planning.',
+      },
+      {
+        title: 'Treatment Planning & Protocols',
+        description: 'Build evidence-guided clinical protocols for long-term hair regrowth outcomes.',
+      },
+    ],
+    highlights: [
+      'Two-day advanced hair restoration training',
+      'Diagnosis to protocol end-to-end approach',
+      'PRP, GFC, mesotherapy, exosome integration',
+      'Comprehensive trichology planning skills',
+      'Clinical application-focused curriculum',
     ],
   },
 ]
@@ -586,13 +1092,14 @@ export const courseDetailLabels = {
 
 /** Shared sidebar on every treatment detail page */
 export const treatmentWhyChooseUs = {
-  heading: 'Why Choose Us?',
+  heading: 'Why Choose NIA Aesthetic?',
   points: [
-    'Experienced dermatologists',
-    'USFDA-approved technology',
     'Personalized treatment plans',
-    'Safe, hygienic environment',
-    'Affordable pricing',
+    'Advanced technology and equipment',
+    'Safe and evidence-based procedures',
+    'Experienced aesthetic professionals',
+    'Hygienic and comfortable environment',
+    'Transparent consultation process',
   ],
   ctaLabel: 'Need more details?',
   ctaPrefix: 'Call us at',
@@ -610,31 +1117,33 @@ export const treatmentsSection = {
     {
       id: 'anti-aging',
       title: 'Anti-Aging Treatments',
-      description: 'Turn back time with our advanced anti-aging solutions including Botox, fillers, and skin rejuvenation therapies.',
+      description: 'Comprehensive anti-aging solutions designed to restore youthful contours, improve skin quality, and reduce signs of aging.',
       image: '/assets/images/treatments/anti-aging.jpg',
       href: '/clinic/anti-aging',
       offerings: [
-        'Botox & Dysport',
+        'Botox',
         'Dermal Fillers',
-        'Skin Rejuvenation Therapy',
         'Thread Lift',
-        'Anti-Aging Facials',
+        'Skin Boosters',
         'Collagen Induction Therapy',
+        'Microneedling',
+        'RF Microneedling',
       ],
     },
     {
       id: 'laser',
       title: 'Laser Treatments',
-      description: 'State-of-the-art laser technology for hair removal, skin resurfacing, pigmentation correction, and more.',
+      description: 'State-of-the-art laser technology for targeted hair, skin, pigment, and lesion correction with precision and safety.',
       image: '/assets/images/treatments/laser.jpg',
       href: '/clinic/laser',
       offerings: [
-        'Laser Hair Removal',
-        'Laser Skin Resurfacing',
-        'Pigmentation Correction',
-        'Carbon Laser Peel',
-        'Laser Scar Reduction',
+        'Laser Hair Reduction',
+        'Laser Skin Rejuvenation',
         'Tattoo Removal',
+        'Pigmentation Laser',
+        'Vascular Lesion Treatment',
+        'Mole & Wart Removal (where appropriate)',
+        'Carbon Laser Peel',
       ],
     },
     {
@@ -660,74 +1169,75 @@ export const treatmentsSection = {
     {
       id: 'hair',
       title: 'Hair Treatments',
-      description: 'Advanced hair restoration, PRP therapy, and scalp treatments to combat hair loss and promote healthy growth.',
+      description: 'Advanced hair restoration and scalp therapies to reduce hair fall, improve scalp health, and stimulate regrowth.',
       image: '/assets/images/treatments/hair.jpg',
       href: '/clinic/hair',
       offerings: [
-        'PRP & GFC Hair Therapy',
+        'PRP Hair Therapy',
+        'GFC Hair Treatment',
         'Hair Mesotherapy',
-        'Scalp Treatments',
-        'Hair Fall Control Therapy',
-        'Hair Growth Boosters',
-        'Dandruff & Scalp Care',
+        'Hair Fall Management',
+        'Dandruff & Scalp Therapy',
+        'Hair Growth Stimulation',
+        'Low-Level Laser Therapy (LLLT)',
       ],
     },
     {
       id: 'body',
-      title: 'Body Contouring',
-      description: 'Non-invasive body sculpting and contouring treatments to help you achieve your ideal physique.',
+      title: 'Body Contouring & Wellness',
+      description: 'Body contouring and wellness programs focused on fat reduction, sculpting, skin tightening, and metabolic support.',
       image: '/assets/images/treatments/body.jpg',
       href: '/clinic/body',
       offerings: [
-        'Non-Invasive Body Sculpting',
-        'Fat Reduction Treatments',
-        'Skin Tightening',
+        'Fat Reduction',
+        'Inch Loss Treatments',
+        'Body Sculpting',
         'Cellulite Reduction',
-        'Body Contouring Packages',
+        'Body Skin Tightening',
+        'IV Wellness Therapy (where permitted)',
+        'Weight Management Programs',
       ],
     },
     {
       id: 'dermatological',
-      title: 'Dermatological Services',
-      description: 'Comprehensive dermatological services including skin cancer screenings, acne treatments, and more.',
+      title: 'Dermatology Services',
+      description: 'Comprehensive dermatology care for chronic and acute skin conditions, allergies, infections, and nail concerns.',
       image: '/assets/images/treatments/dermatological.jpg',
       href: '/clinic/dermatological',
       offerings: [
-        'Skin Consultations',
-        'Acne Treatment',
-        'Eczema & Psoriasis Care',
-        'Skin Allergy Management',
-        'Mole & Lesion Evaluation',
-        'Skin Cancer Screening',
+        'Eczema Management',
+        'Psoriasis Management',
+        'Rosacea Treatment',
+        'Skin Allergy Consultation',
+        'Fungal Skin Infection Treatment',
+        'Nail Disorders',
       ],
     },
     {
       id: 'cosmetic',
       title: 'Cosmetic Procedures',
-      description: 'Cosmetic procedures including facelifts, lip fillers, and more.',
+      description: 'Targeted cosmetic procedures for benign lesion removal, scar correction, and structural skin repair.',
       image: '/assets/images/treatments/cosmetic.jpg',
       href: '/clinic/cosmetic',
       offerings: [
-        'Lip Fillers',
-        'Cheek & Jaw Contouring',
-        'Non-Surgical Facelift',
-        'Under-Eye Treatments',
-        'Lip Enhancement',
-        'Facial Balancing',
+        'Mole Removal',
+        'Skin Tag Removal',
+        'Ear Lobe Repair',
+        'Scar Revision',
+        'Keloid Management',
       ],
     },
     {
       id: 'aesthetic-gynecology',
       title: 'Aesthetic Gynecology',
-      description: 'Aesthetic gynecology services including vaginal rejuvenation, labiaplasty, and more.',
+      description: 'Aesthetic gynecology treatments focused on intimate wellness, rejuvenation, and non-surgical functional support.',
       image: '/assets/images/treatments/aesthetic-gynecology.jpg',
       href: '/clinic/aesthetic-gynecology',
       offerings: [
-        'Vaginal Rejuvenation',
-        'Labiaplasty Consultation',
-        'Intimate Skin Care',
-        'Postpartum Aesthetic Care',
-        'Laser Intimate Treatments',
+        'Intimate Rejuvenation',
+        'PRP for Intimate Wellness',
+        'Vaginal Tightening (Laser/RF)',
+        'Stress Urinary Incontinence Treatments',
       ],
     },
   ],
@@ -853,10 +1363,10 @@ export const testimonialsSection = {
 }
 
 export const aboutSection = {
-  label: 'ABOUT NIA',
+  label: 'ABOUT NIIA',
   heading: 'Redefining Dermatology Care & Education in India',
   description:
-    'At NIA, we bridge the gap between clinical excellence and professional education. Our state-of-the-art clinic offers world-class dermatological treatments, while our institute trains the next generation of aesthetic medicine specialists.',
+    'At NIIA, we bridge the gap between clinical excellence and professional education. Our state-of-the-art clinic offers world-class dermatological treatments, while our NIIA institute trains the next generation of aesthetic medicine specialists.',
   cta: 'Know More About Us',
   ctaHref: '/about',
   image: '/assets/images/about/clinic-interior.png',
@@ -911,11 +1421,11 @@ export const blogPosts = [
     title: 'Career Opportunities in Aesthetic Medicine',
     image: '/assets/images/blog/blog-3.jpg',
     excerpt:
-      'Explore the growing field of aesthetic dermatology and how NIA\'s programs prepare you for a rewarding career.',
+      'Explore the growing field of aesthetic dermatology and how NIIA\'s programs prepare you for a rewarding career.',
     body: [
       'Aesthetic medicine is one of the fastest-growing specialties in healthcare. Rising demand for non-invasive treatments, combined with increasing patient awareness, has created abundant career opportunities for qualified professionals.',
       'Dermatologists, dentists, nurses, and allied health graduates can all find pathways into aesthetic practice — from injectables and laser therapies to skin rejuvenation and cosmetology.',
-      'NIA\'s diploma and certificate programs combine theoretical knowledge with hands-on training under experienced faculty. Graduates go on to work in premium clinics, launch their own practices, or join medical spas across India.',
+      'NIIA\'s diploma and certificate programs combine theoretical knowledge with hands-on training under experienced faculty. Graduates go on to work in premium clinics, launch their own practices, or join medical spas across India.',
       'Key skills employers look for include clinical assessment, patient communication, knowledge of USFDA-approved devices, and adherence to safety protocols. Our curriculum is designed to build all of these from day one.',
       'Whether you are a recent graduate or an established practitioner looking to expand your skill set, aesthetic medicine offers both financial reward and the satisfaction of helping patients feel confident in their skin.',
     ],
@@ -930,7 +1440,7 @@ export const blogPosts = [
     excerpt:
       'Follow a typical day in our training program — from morning rounds to hands-on procedures and evening case discussions.',
     body: [
-      'Ever wondered what life is like as a dermatology resident at NIA? We followed Dr. Meera Kapoor through a typical training day to give aspiring specialists an inside look.',
+      'Ever wondered what life is like as a dermatology resident at NIIA? We followed Dr. Meera Kapoor through a typical training day to give aspiring specialists an inside look.',
       'The day begins at 8 AM with morning rounds. Residents review overnight cases, discuss treatment plans with senior faculty, and prepare for the day\'s consultations. This collaborative environment ensures every patient receives thoughtful, evidence-based care.',
       'By mid-morning, the clinic floor is buzzing. Residents assist with laser procedures, observe injectable techniques, and conduct independent consultations under supervision. Hands-on exposure is central to our training philosophy.',
       'Afternoons are dedicated to academic sessions — journal clubs, case presentations, and workshops on emerging technologies. Today\'s topic: advances in HIFU skin tightening, with a live demonstration by our lead dermatologist.',
@@ -975,7 +1485,7 @@ export function getBlogBySlug(slug) {
 }
 
 export const ctaSection = {
-  heading: 'Ready to Begin Your Journey With NIA?',
+  heading: 'Ready to Begin Your Journey With NIIA?',
   items: [
     { label: 'Explore Courses', href: '/institute' },
   ],
