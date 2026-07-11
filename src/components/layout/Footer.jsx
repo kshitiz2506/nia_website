@@ -83,7 +83,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`tel:${siteInfo.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-nia-gold">
+                <a href={`tel:${siteInfo.phone2.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-nia-gold">
                   <PhoneIcon className="w-4 h-4 shrink-0 text-nia-gold" />
                   {siteInfo.phone2}
                 </a>
