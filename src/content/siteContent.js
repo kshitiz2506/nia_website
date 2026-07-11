@@ -10,10 +10,11 @@ export const siteInfo = {
   tagline: 'NEXT INDIA',
   logo: '/assets/images/logo/clinic_logo.png',
   logoAlt: 'NIA Aesthetics — Advanced Aesthetic & Wellness Clinic',
-  phone: '+91 6376226758', 
-  whatsapp: '+91 6376226758',
-  email: 'info@nianextindia.com',
-  address: '123 Medical District, New Delhi, India 110001',
+  phone: '+91 8675200222', 
+  phone2: '+91 7065123679',
+  whatsapp: '+91 7065123679',
+  email: 'customersupport@niia.in',
+  address: 'A 1/230 , Ground Floor, Golf Course Rd, Opposite Metro Pillar 237, Sector 55, Gurugram, Haryana, 122011',
 }
 
 export const navLinks = {
@@ -150,10 +151,10 @@ const instituteCourseList = [
     description:
       'Fast-Track Your Skills in Cosmetology. An intensive program covering essential skin and hair treatments, consultation techniques, treatment planning, and practical sessions — ideal for beginners and practicing professionals looking to upgrade their skills.',
     image: '/assets/images/courses/certificate.jpg',
-    duration: '1 Month',
+    duration: '15 Days',
     format: 'On-Campus',
     eligibility: '12th Pass',
-    price: 75000,
+    price: "50000",
     curriculum: [
       {
         title: 'Introduction to Skin & Hair Aesthetics',
@@ -405,15 +406,15 @@ const instituteCourseList = [
   },
   {
     id: 'aesthetic-medicine',
-    program: 'certificate',
-    category: 'Certificate',
+    program: 'fellowship',
+    category: 'Fellowship',
     title: 'Certificate in Aesthetic Medicine',
     description:
       'Intensive certification covering injectables, facial aesthetics, and non-surgical rejuvenation techniques for medical professionals.',
     image: '/assets/images/courses/certificate.jpg',
-    duration: '6 Months',
+    duration: '1.5 Months',
     format: 'On-Campus',
-    price: 75000,
+    price: "150000",
     curriculum: [
       {
         title: 'Facial Anatomy & Aging',
@@ -539,9 +540,9 @@ const instituteCourseList = [
     description:
       'Master laser hair removal, skin resurfacing, and IPL treatments with supervised hands-on sessions on USFDA-approved devices.',
     image: '/assets/images/courses/diploma.jpg',
-    duration: '3 Months',
-    format: 'Hybrid (Online + Clinical)',
-    price: 55000,
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 25000,
     curriculum: [
       {
         title: 'Laser Physics & Safety Protocols',
@@ -584,9 +585,9 @@ const instituteCourseList = [
     description:
       'Learn platelet-rich plasma and growth factor concentrate therapies for hair restoration and skin rejuvenation.',
     image: '/assets/images/courses/workshops.jpg',
-    duration: '2 Months',
-    format: 'Online',
-    price: 35000,
+    duration: '1 Day',
+    format: 'On-Campus',
+    price: 15000,
     curriculum: [
       {
         title: 'PRP Science & Preparation Methods',
@@ -629,9 +630,9 @@ const instituteCourseList = [
     description:
       'Master luxury semi-permanent makeup with expert training, advanced techniques, and hands-on practice. Build confidence, precision, and a rewarding career in the world of aesthetic beauty.',
     image: '/assets/images/courses/certificate.jpg',
-    duration: '1 Month',
+    duration: '7 Days',
     format: 'On-Campus',
-    price: 100000,
+    price: 70000,
     curriculum: [
       {
         title: 'Eye Brow Mapping',
@@ -682,9 +683,9 @@ const instituteCourseList = [
     description:
       'Build foundational skills in semi-permanent makeup with focused theoretical learning and guided hands-on practice — an ideal starting point for beauty professionals entering the field of permanent cosmetics.',
     image: '/assets/images/courses/certificate.jpg',
-    duration: '1 Month',
+    duration: '5 Days',
     format: 'On-Campus',
-    price: 100000,
+    price: 40000,
     curriculum: [
       {
         title: 'BB Glow',
@@ -725,7 +726,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 25000,
+    price: 30000,
     curriculum: [
       {
         title: 'Facial Anatomy for Fillers',
@@ -766,7 +767,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 50000,
     curriculum: [
       {
         title: 'Advanced Indications',
@@ -799,7 +800,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 40000,
     curriculum: [
       {
         title: 'Full-Face Rejuvenation',
@@ -832,7 +833,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 40000,
     curriculum: [
       {
         title: 'Facial Anatomy & Planning',
@@ -865,7 +866,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 70000,
     curriculum: [
       {
         title: 'Advanced Procedures',
@@ -894,7 +895,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 25000,
     curriculum: [
       {
         title: 'Skin Booster Modalities',
@@ -927,7 +928,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 30000,
     curriculum: [
       {
         title: 'Exosome Therapy Fundamentals',
@@ -960,7 +961,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 30000,
     curriculum: [
       {
         title: 'IV Nutrition & Vitamin Drips',
@@ -993,7 +994,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 40000,
     curriculum: [
       {
         title: 'Laser Physics & Skin Typing',
@@ -1026,7 +1027,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '2 Days',
     format: 'On-Campus',
-    price: 15000,
+    price: 30000,
     curriculum: [
       {
         title: 'Advanced EBD Applications',
@@ -1055,7 +1056,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 20000,
     curriculum: [
       {
         title: 'Body Contouring Devices',
@@ -1088,7 +1089,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 25000,
     curriculum: [
       {
         title: 'GLP-1 Medication Foundations',
@@ -1121,7 +1122,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/certificate.jpg',
     duration: '2 Days',
     format: 'On-Campus',
-    price: 15000,
+    price: 20000,
     curriculum: [
       {
         title: 'Peel Science & Depth Selection',
@@ -1154,7 +1155,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/diploma.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 20000,
     curriculum: [
       {
         title: 'Core MediFacial Protocols',
@@ -1187,7 +1188,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '1 Day',
     format: 'On-Campus',
-    price: 15000,
+    price: 25000,
     curriculum: [
       {
         title: 'Skin & Hair Mesotherapy',
@@ -1220,7 +1221,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/workshops.jpg',
     duration: '2 Days',
     format: 'On-Campus',
-    price: 15000,
+    price: 25000,
     curriculum: [
       {
         title: 'Hair Loss Diagnosis',

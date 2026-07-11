@@ -17,7 +17,6 @@ export function buildPageTitle(pageTitle) {
 
 export const staticPageSeo = {
   home: {
-    title: 'Dermatology Clinic & Aesthetic Medicine Institute',
     description: defaultDescription,
     path: '/',
   },
