@@ -8,14 +8,16 @@
 
 
   --color-nia-gold: #f6d072;
+
   --color-nia-gold-light: #ebb54e;
+
   --color-nia-gold-dark: #b28537;
 
-  --color-nia-gold-metallic-highlight: color-mix(in srgb, var(--color-nia-gold) 55%, white);
-  --color-nia-gold-metallic-light: var(--color-nia-gold);
-  --color-nia-gold-metallic-mid: var(--color-nia-gold-light);
-  --color-nia-gold-metallic-deep: var(--color-nia-gold-dark);
-  --color-nia-gold-metallic-shadow: color-mix(in srgb, var(--color-nia-gold-dark) 70%, black);
+  --color-nia-gold-metallic-highlight: #fce9a0;
+  --color-nia-gold-metallic-light: #e8c44a;
+  --color-nia-gold-metallic-mid: #d4af37;
+  --color-nia-gold-metallic-deep: #b8922a;
+  --color-nia-gold-metallic-shadow: #96731c;
 
   --color-nia-offwhite: #f8f5ee;
 
@@ -89,11 +91,11 @@ h4 {
 
 /* Metallic gold surfaces */
 .gold-metallic {
-  background-color: var(--color-nia-gold-light);
+  background-color: var(--color-nia-gold-metallic-mid);
   background-image: var(--gradient-gold-metallic);
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-highlight) 65%, transparent),
-    inset 0 -1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-shadow) 40%, transparent);
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.14);
 }
 
 .gold-metallic--interactive {
@@ -105,25 +107,25 @@ h4 {
 }
 
 .gold-metallic-section {
-  background-color: var(--color-nia-gold-light);
+  background-color: var(--color-nia-gold-metallic-mid);
   background-image: var(--gradient-gold-metallic-section);
 }
 
 /* Luxury gold glow */
 .gold-glow {
   box-shadow:
-    0 0 8px color-mix(in srgb, var(--color-nia-gold) 35%, transparent),
-    0 0 16px color-mix(in srgb, var(--color-nia-gold) 20%, transparent),
-    inset 0 1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-highlight) 55%, transparent),
-    inset 0 -1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-shadow) 35%, transparent);
+    0 0 8px rgba(212, 175, 55, 0.35),
+    0 0 16px rgba(212, 175, 55, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12);
 }
 
 /* Sparkling luxury border */
 .gold-border {
-  border: 1px solid var(--color-nia-gold-light);
+  border: 1px solid #d4af37;
   box-shadow:
-    0 0 4px color-mix(in srgb, var(--color-nia-gold) 50%, transparent),
-    0 0 12px color-mix(in srgb, var(--color-nia-gold-light) 25%, transparent);
+    0 0 4px rgba(212,175,55,.5),
+    0 0 12px rgba(212,175,55,.25);
 }
 
 /* Pulsating Book Now button */
@@ -131,19 +133,19 @@ h4 {
   0% {
     transform: scale(1);
     box-shadow:
-      0 0 0 0 color-mix(in srgb, var(--color-nia-gold) 70%, transparent);
+      0 0 0 0 rgba(212,175,55,.7);
   }
 
   70% {
     transform: scale(1.04);
     box-shadow:
-      0 0 0 16px color-mix(in srgb, var(--color-nia-gold) 0%, transparent);
+      0 0 0 16px rgba(212,175,55,0);
   }
 
   100% {
     transform: scale(1);
     box-shadow:
-      0 0 0 0 color-mix(in srgb, var(--color-nia-gold) 0%, transparent);
+      0 0 0 0 rgba(212,175,55,0);
   }
 }
 
@@ -200,7 +202,7 @@ h4 {
   background-color: var(--color-nia-gold-light);
   color: var(--color-nia-dark);
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--color-nia-gold) 28%, transparent);
+  box-shadow: 0 8px 18px rgba(212, 175, 55, 0.28);
 }
 
 .btn-gold:focus-visible {

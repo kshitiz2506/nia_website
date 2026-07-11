@@ -67,7 +67,7 @@ export default function Hero() {
       <button
         type="button"
         onClick={prev}
-        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 p-2 text-white/70 transition-colors hover:text-nia-gold lg:left-8"
+        className="absolute left-4 top-1/2 z-20 hidden -translate-y-1/2 p-2 text-white/70 transition-colors hover:text-nia-gold md:block lg:left-8"
         aria-label="Previous slide"
       >
         <ChevronLeftIcon className="h-8 w-8" />
@@ -75,7 +75,7 @@ export default function Hero() {
       <button
         type="button"
         onClick={next}
-        className="absolute right-4 top-1/2 z-20 -translate-y-1/2 p-2 text-white/70 transition-colors hover:text-nia-gold lg:right-8"
+        className="absolute right-4 top-1/2 z-20 hidden -translate-y-1/2 p-2 text-white/70 transition-colors hover:text-nia-gold md:block lg:right-8"
         aria-label="Next slide"
       >
         <ChevronRightIcon className="h-8 w-8" />
