@@ -3,14 +3,18 @@ import { Link } from 'react-router'
 import { blogPage, blogSection } from '../content/siteContent'
 import { ArrowRightIcon, SearchIcon } from '../components/layout/icons/Icons'
 import PageMeta from '../components/layout/PageMeta'
+import { useReveal } from '../components/ui/Reveal'
 import { staticPageSeo } from '../content/seo'
 
 const PLACEHOLDER =
   'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80'
 
-function BlogCard({ item }) {
+function BlogCard({ item, index }) {
+  const { revealProps } = useReveal(index)
+
   return (
     <Link
+      {...revealProps}
       to={item.href}
       className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-[0_4px_10px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]"
     >
@@ -50,6 +54,8 @@ export default function Blog() {
   const { items } = blogSection
   const seo = staticPageSeo.blog
   const [query, setQuery] = useState('')
+  const headerReveal = useReveal(0)
+  const searchReveal = useReveal(0)
 
   const filteredItems = useMemo(() => {
     const normalized = query.trim().toLowerCase()
@@ -68,7 +74,7 @@ export default function Blog() {
       <PageMeta title={seo.title} description={seo.description} path={seo.path} />
       <section className="bg-nia-dark pt-28 pb-14">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <header className="mx-auto max-w-3xl text-center">
+          <header {...headerReveal.revealProps} className="mx-auto max-w-3xl text-center">
             <span className="inline-block rounded-full border border-nia-gold/60 px-4 py-1.5 text-xs font-medium tracking-[0.15em] text-nia-gold">
               {label}
             </span>
@@ -79,7 +85,7 @@ export default function Blog() {
 
       <section className="bg-nia-offwhite py-12 pb-20 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="relative mx-auto mb-10 max-w-3xl">
+          <div {...searchReveal.revealProps} className="relative mx-auto mb-10 max-w-3xl">
             <SearchIcon className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-nia-dark/40" />
             <input
               type="search"
@@ -92,8 +98,8 @@ export default function Blog() {
 
           {filteredItems.length > 0 ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredItems.map((item) => (
-                <BlogCard key={item.id} item={item} />
+              {filteredItems.map((item, index) => (
+                <BlogCard key={item.id} item={item} index={index % 4} />
               ))}
             </div>
           ) : (

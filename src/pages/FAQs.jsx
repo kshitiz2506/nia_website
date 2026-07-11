@@ -2,11 +2,17 @@ import { useMemo, useState } from 'react'
 import { faqPage } from '../content/siteContent'
 import { ChevronDownIcon, SearchIcon } from '../components/layout/icons/Icons'
 import PageMeta from '../components/layout/PageMeta'
+import { useReveal } from '../components/ui/Reveal'
 import { staticPageSeo } from '../content/seo'
 
-function FaqItem({ item, isOpen, onToggle }) {
+function FaqItem({ item, index, isOpen, onToggle }) {
+  const { revealProps } = useReveal(index)
+
   return (
-    <div className="overflow-hidden rounded-xl border border-nia-dark/10 bg-white">
+    <div
+      {...revealProps}
+      className="overflow-hidden rounded-xl border border-nia-dark/10 bg-white"
+    >
       <button
         type="button"
         onClick={onToggle}
@@ -40,6 +46,8 @@ export default function FAQs() {
   const seo = staticPageSeo.faqs
   const [query, setQuery] = useState('')
   const [openId, setOpenId] = useState(null)
+  const headerReveal = useReveal(0)
+  const searchReveal = useReveal(0)
 
   const filteredItems = useMemo(() => {
     const normalized = query.trim().toLowerCase()
@@ -57,7 +65,7 @@ export default function FAQs() {
       <PageMeta title={seo.title} description={seo.description} path={seo.path} />
       <section className="bg-nia-dark pt-28 pb-14">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <header className="mx-auto max-w-3xl text-center">
+          <header {...headerReveal.revealProps} className="mx-auto max-w-3xl text-center">
             <span className="inline-block rounded-full border border-nia-gold/60 px-4 py-1.5 text-xs font-medium tracking-[0.15em] text-nia-gold">
               {label}
             </span>
@@ -68,7 +76,7 @@ export default function FAQs() {
 
       <section className="bg-nia-offwhite py-12 pb-20 sm:py-16">
         <div className="mx-auto max-w-3xl px-4 lg:px-8">
-          <div className="relative mb-8">
+          <div {...searchReveal.revealProps} className="relative mb-8">
             <SearchIcon className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-nia-dark/40" />
             <input
               type="search"
@@ -81,10 +89,11 @@ export default function FAQs() {
 
           <div className="space-y-3">
             {filteredItems.length > 0 ? (
-              filteredItems.map((item) => (
+              filteredItems.map((item, index) => (
                 <FaqItem
                   key={item.id}
                   item={item}
+                  index={index % 4}
                   isOpen={openId === item.id}
                   onToggle={() => setOpenId((current) => (current === item.id ? null : item.id))}
                 />

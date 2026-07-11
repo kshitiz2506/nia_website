@@ -10,8 +10,8 @@ export const siteInfo = {
   tagline: 'NEXT INDIA',
   logo: '/assets/images/logo/clinic_logo.png',
   logoAlt: 'NIA Aesthetics — Advanced Aesthetic & Wellness Clinic',
-  phone: '916376226758', 
-  whatsapp: '916376226758',
+  phone: '+91 6376226758', 
+  whatsapp: '+91 6376226758',
   email: 'info@nianextindia.com',
   address: '123 Medical District, New Delhi, India 110001',
 }
@@ -87,10 +87,10 @@ export const heroSlides = [
 // Image paths — replace with your uploaded files in public/assets/images/hero/
 export const heroImages = [
   '/assets/images/hero/slide-1.png',
-  '/assets/images/hero/slide-2.jpg',
-  '/assets/images/hero/slide-3.jpg',
-  '/assets/images/hero/slide-4.jpg',
-  '/assets/images/hero/slide-5.jpg',
+  '/assets/images/hero/slide-2.png',
+  '/assets/images/hero/slide-3.png',
+  '/assets/images/hero/slide-4.png',
+  '/assets/images/hero/slide-5.png',
 ]
 
 export const stats = [
@@ -115,117 +115,223 @@ export const institutePage = {
 
 /** Why Train With Us card on the institute page */
 export const instituteWhyTrainWithUs = {
-  heading: 'Why Train With Us?',
-  description:
-    'NIIA combines clinical excellence with structured education — giving you the skills, confidence, and credentials to excel in aesthetic medicine.',
+  heading: 'Why Choose NIIA?',
+  description: 'Learn Today. Lead Tomorrow.',
   points: [
-    'Expert faculty with international training',
-    'Hands-on clinical exposure',
-    'USFDA-approved technology training',
-    'Internationally aligned curriculum',
-    'Career guidance and placement support',
+    'Expert Faculty & Mentorship',
+    'Hands-on Clinical Training',
+    'Live Patient Demonstrations',
+    'Industry-Oriented Curriculum',
+    'International Standard Protocols',
+    'Small Batch Learning',
+    'Certificate on Successful Completion',
+    'Placement & Career Guidance',
+    'Lifetime Learning Support',
   ],
   ctaLabel: 'Ready to enroll?',
   ctaPrefix: 'Speak with our admissions team at',
 }
 
+/** Enroll CTA band at the bottom of the institute page */
+export const instituteEnrollCta = {
+  heading: 'Enroll Now',
+  description:
+    'Start your career with hands-on clinical training, expert mentorship, and internationally aligned programs at NIIA — and take the next step toward becoming a leader in aesthetic medicine.',
+  buttonLabel: 'Apply for a Course',
+  buttonHref: '/contact',
+}
+
 const instituteCourseList = [
   {
-    id: 'clinical-dermatology',
+    id: 'short-term-skin-hair-aesthetics',
     program: 'fellowship',
     category: 'Fellowship',
-    title: 'Diploma in Clinical Dermatology',
+    title: 'Short-Term Course in Skin & Hair Aesthetics',
     description:
-      'A comprehensive fellowship covering clinical dermatology fundamentals, diagnosis, and advanced aesthetic procedures for healthcare professionals.',
-    image: '/assets/images/courses/diploma.jpg',
-    duration: '12 Months',
-    format: 'Hybrid (Online + Clinical)',
-    price: 250000,
+      'Fast-Track Your Skills in Cosmetology. An intensive program covering essential skin and hair treatments, consultation techniques, treatment planning, and practical sessions — ideal for beginners and practicing professionals looking to upgrade their skills.',
+    image: '/assets/images/courses/certificate.jpg',
+    duration: '1 Month',
+    format: 'On-Campus',
+    eligibility: '12th Pass',
+    price: 75000,
     curriculum: [
       {
-        title: 'Fundamentals of Dermatology',
-        description: 'Core principles of skin structure, common conditions, and foundational clinical assessment techniques.',
+        title: 'Introduction to Skin & Hair Aesthetics',
+        description: 'Overview of cosmetology fundamentals, hygiene standards, and the role of an aesthetic practitioner.',
       },
       {
-        title: 'Clinical Diagnosis & Dermoscopy',
-        description: 'Learn systematic diagnosis approaches and dermoscopy for accurate lesion evaluation.',
+        title: 'Skin Analysis & Client Consultation',
+        description: 'Skin typing, basic assessment, consultation flow, and building appropriate treatment plans.',
       },
       {
-        title: 'Medical Dermatology & Therapeutics',
-        description: 'Evidence-based treatment protocols for acne, eczema, psoriasis, and other medical skin conditions.',
+        title: 'Essential Skin Treatments',
+        description: 'Foundational facial protocols, cleansing routines, and common skin concern management.',
       },
       {
-        title: 'Aesthetic Dermatology Basics',
-        description: 'Introduction to non-surgical rejuvenation, injectables, and cosmetic dermatology fundamentals.',
+        title: 'Hair & Scalp Basics',
+        description: 'Hair and scalp anatomy, common hair concerns, and introductory hair care treatments.',
       },
       {
-        title: 'Laser & Energy-Based Devices',
-        description: 'Hands-on training with laser systems for hair removal, pigmentation, and skin resurfacing.',
+        title: 'Treatment Planning & Safety',
+        description: 'Selecting suitable treatments, contraindications, aftercare guidance, and client safety essentials.',
       },
       {
-        title: 'Clinical Rotations & Case Management',
-        description: 'Supervised patient cases, treatment planning, and real-world clinical decision-making.',
+        title: 'Practical Sessions',
+        description: 'Hands-on practice covering consultation, treatment delivery, and real-world clinic workflow.',
       },
     ],
     highlights: [
-      'Structured 12-month fellowship curriculum',
-      'Supervised clinical rotations',
-      'Hybrid learning with online modules',
-      'Mentorship from senior dermatologists',
-      'Career guidance upon completion',
+      'Open to 12th pass candidates',
+      'Ideal for beginners entering cosmetology',
+      'Covers essential skin and hair aesthetics',
+      'Consultation and treatment planning focus',
+      'Hands-on practical training included',
     ],
   },
   {
-    id: 'skincare-specialist',
+    id: 'fellowship-aesthetic-medicine',
     program: 'fellowship',
     category: 'Fellowship',
-    title: 'Skincare Specialist Course',
+    title: 'Fellowship In Aesthetic Medicine (MD/MBBS/MDS)',
     description:
-      'Focused training on skin analysis, treatment protocols, and patient care for aspiring skincare professionals.',
-    image: '/assets/images/courses/certificate.jpg',
-    duration: '6 Months',
-    format: 'Online',
-    price: 45000,
-    eligibility: '12th Pass',
+      'A comprehensive 3-month fellowship for qualified medical and dental professionals covering skin and hair aesthetics, medifacials, lasers, injectables, regenerative therapies, and practice setup — with live patient case studies and extended clinical observation.',
+    image: '/assets/images/courses/diploma.jpg',
+    duration: '3 Months',
+    format: 'On-Campus',
+    eligibility: 'MD, MBBS, MDS',
+    price: 350000,
     curriculum: [
       {
-        title: 'Skin Anatomy & Physiology',
-        description: 'Understand skin layers, barrier function, and how structure relates to common concerns.',
+        title: 'Introduction',
+        description: 'Orientation to the fellowship structure, learning objectives, and clinical training pathway.',
       },
       {
-        title: 'Skin Typing & Analysis',
-        description: 'Master professional skin assessment techniques to recommend appropriate treatments.',
+        title: 'Basics of Skin In Aesthetics, Skin Conditions & Management',
+        descriptionPoints: [
+          'Integumentary System — Anatomy',
+          'Integumentary System Physiology',
+          'Skin Disorders, Diseases & Management',
+        ],
       },
       {
-        title: 'Product Chemistry & Formulation',
-        description: 'Learn active ingredients, product selection, and how formulations affect treatment outcomes.',
+        title: 'Basics of Hair in Aesthetics, Hair Conditions & Management',
+        descriptionPoints: [
+          'Hair Anatomy',
+          'Hair Disorders, Diseases & Management',
+        ],
       },
       {
-        title: 'Treatment Protocols for Common Concerns',
-        description: 'Step-by-step protocols for acne, pigmentation, aging, and sensitivity management.',
+        title: 'Medifacials',
+        descriptionPoints: [
+          'Hydrafacial',
+          'Carbon Facial',
+          'Ultrasonic',
+          'T-oxy',
+          'Oxygeneo',
+          'Radiance Revival',
+          'Radiofrequency facial',
+        ],
       },
       {
-        title: 'Client Consultation & Aftercare',
-        description: 'Build consultation skills and aftercare plans that improve results and client satisfaction.',
+        title: 'Acne Management — Chemical Peels, Scar Treatment with MDA & RFMN',
+        descriptionPoints: [
+          'Microdermabrasion',
+          'Chemical Peels — Introduction',
+          'Mechanism',
+          'Types of Acids used in Aesthetic Industry',
+          'Classification — Superficial, Medium & Deep Peel',
+        ],
       },
       {
-        title: 'Building a Skincare Practice',
-        description: 'Business basics for launching or growing a skincare-focused professional practice.',
+        title: 'Laser Hair Reduction',
+        descriptionPoints: [
+          'Introduction',
+          'Mechanism',
+          'Chromophores, Wavelengths & Understanding Parameters',
+          'Laser Tissue Interaction',
+          'IPL, Diode & Nd:YAG',
+          'Contraindications',
+          'Complication management',
+        ],
+      },
+      {
+        title: 'Ablative Lasers',
+        descriptionPoints: [
+          'Introduction',
+          'Mechanism, Chromophores & Understanding Parameters',
+          'Long Pulse & Short Pulse lasers',
+          'Tattoo Removal, Pigmentation, Anti-aging, Skin Rejuvenation & Scar',
+        ],
+      },
+      {
+        title: 'Energy Based Devices for Contouring & Skin Tightening',
+        descriptionPoints: [
+          'Exilis',
+          'RF and Ultrasound Cavitation',
+          'Cool Sculpt',
+          'HIFU',
+          'Lymphatic Ballancer',
+          'TENS & G5',
+          'I-Lipo',
+        ],
+      },
+      {
+        title: 'Injectables',
+        descriptionPoints: [
+          'Botulinum Toxin Theory & Upper Face Indications',
+          'Fillers — Mid Face, Lip Fillers & Tear Trough Fillers',
+          'Basic Thread Lift — Theory, Mono and Cog Threads & Basic Indications',
+        ],
+      },
+      {
+        title: 'Exosomes — Face and Hair',
+        description: 'Exosome-based therapies for facial rejuvenation and hair restoration.',
+      },
+      {
+        title: 'PRP',
+        descriptionPoints: [
+          'Introduction',
+          'Benefits',
+          'Different Growth Factors',
+          'Indications',
+          'Contraindications and Complication Management',
+          'Hair Restoration & Skin Rejuvenation',
+        ],
+      },
+      {
+        title: 'Mesotherapy',
+        descriptionPoints: [
+          'Introduction',
+          'Skin Rejuvenation',
+          'Hair Rejuvenation',
+          'Dermarollers & Dermapen',
+        ],
+      },
+      {
+        title: 'Additional Topics',
+        descriptionPoints: [
+          'Product Knowledge',
+          'Counselling Skills',
+          'Facial Assessment',
+          'Case Studies on Live Patients',
+          'One Month of Extra Observation (Institute)',
+          'Guidance to set up your own practice',
+        ],
       },
     ],
     highlights: [
-      'Fully online, self-paced modules',
-      'Industry-recognized certification',
-      'Practical case studies and assessments',
-      'Expert faculty support',
-      'Ideal for allied health professionals',
+      '3-month fellowship for MD, MBBS, and MDS professionals',
+      'Skin, hair, laser, injectable, and regenerative aesthetics training',
+      'Live patient case studies and extended institute observation',
+      'Practice setup guidance upon completion',
+      'Comprehensive aesthetic medicine curriculum',
     ],
   },
   {
     id: 'aast',
     program: 'certificate',
     category: 'Certificate',
-    title: 'Advance Aesthetic Skin Technician Course( AAST)',
+    title: 'Advance Aesthetic Skin Technician Course (AAST)',
     description:
       'Your first step towards a career in aesthetic skincare. Gain practical expertise in skin analysis, facial treatments, laser assistance, and clinic protocols through hands-on training.',
     image: '/assets/images/courses/certificate.jpg',
@@ -342,7 +448,7 @@ const instituteCourseList = [
     id: 'cccc',
     program: 'certificate',
     category: 'Certificate',
-    title: 'Certificate Course in Clinical Cosmetology( CCCC)',
+    title: 'Certificate Course in Clinical Cosmetology (CCCC)',
     description:
       'Master the science of advanced skin and hair treatments with practical exposure to modern aesthetic procedures and patient management.',
     image: '/assets/images/courses/certificate.jpg',
@@ -513,6 +619,100 @@ const instituteCourseList = [
       'Evidence-based treatment protocols',
       'Certificate upon successful completion',
       'Access to faculty Q&A sessions',
+    ],
+  },
+  {
+    id: 'spmu-advanced',
+    program: 'certificate',
+    category: 'Certificate',
+    title: 'Certificate Course in Semi-Permanent Makeup (SPMU) Advanced',
+    description:
+      'Master luxury semi-permanent makeup with expert training, advanced techniques, and hands-on practice. Build confidence, precision, and a rewarding career in the world of aesthetic beauty.',
+    image: '/assets/images/courses/certificate.jpg',
+    duration: '1 Month',
+    format: 'On-Campus',
+    price: 100000,
+    curriculum: [
+      {
+        title: 'Eye Brow Mapping',
+        description: 'Precision brow mapping techniques for balanced, symmetrical semi-permanent brow design.',
+      },
+      {
+        title: 'Cheek Blush',
+        description: 'Semi-permanent cheek blush application for natural contour and a refreshed appearance.',
+      },
+      {
+        title: 'Micro Blading',
+        description: 'Hair-stroke microblading methods for realistic, long-lasting eyebrow enhancement.',
+      },
+      {
+        title: 'Scalp Micro Pigmentation',
+        description: 'Scalp micropigmentation protocols for hairline definition and density illusion.',
+      },
+      {
+        title: 'Lip Tint',
+        description: 'Lip tinting techniques to enhance shape, tone, and definition with subtle, lasting colour.',
+      },
+      {
+        title: 'Camouflage Techniques for Vitiligo',
+        description: 'Colour-matching and camouflage approaches for vitiligo and uneven skin pigmentation.',
+      },
+      {
+        title: 'BB Glow',
+        description: 'BB Glow treatments for luminous, even-toned skin with a semi-permanent finish.',
+      },
+      {
+        title: 'Lip Pigmentation',
+        description: 'Advanced lip pigmentation for fuller definition, colour correction, and lasting results.',
+      },
+    ],
+    highlights: [
+      'Comprehensive SPMU theory and hands-on practical training',
+      'Covers brows, lips, cheeks, scalp, and camouflage techniques',
+      'Designed for beauty professionals and aspiring PMU artists',
+      'Industry-oriented curriculum with live demonstration exposure',
+      'Certificate upon successful completion',
+    ],
+  },
+  {
+    id: 'spmu-basic',
+    program: 'certificate',
+    category: 'Certificate',
+    title: 'Certificate Course in Semi-Permanent Makeup (SPMU) Basic',
+    description:
+      'Build foundational skills in semi-permanent makeup with focused theoretical learning and guided hands-on practice — an ideal starting point for beauty professionals entering the field of permanent cosmetics.',
+    image: '/assets/images/courses/certificate.jpg',
+    duration: '1 Month',
+    format: 'On-Campus',
+    price: 100000,
+    curriculum: [
+      {
+        title: 'BB Glow',
+        description: 'Introduction to BB Glow for improved skin tone, radiance, and semi-permanent finish.',
+      },
+      {
+        title: 'Lip Pigmentation',
+        description: 'Foundational lip pigmentation techniques for shape enhancement and natural colour.',
+      },
+      {
+        title: 'Eye Brow Mapping',
+        description: 'Core brow mapping principles for proportionate, client-specific brow design.',
+      },
+      {
+        title: 'Micro Blading',
+        description: 'Essential microblading skills for creating natural-looking eyebrow hair strokes.',
+      },
+      {
+        title: 'Lip Tint',
+        description: 'Basic lip tinting methods for soft colour enhancement and defined lip contours.',
+      },
+    ],
+    highlights: [
+      'Foundational SPMU training for beginners and beauty professionals',
+      'Focused curriculum covering core brow and lip techniques',
+      'Hands-on practice with expert faculty guidance',
+      'Stepping stone to advanced semi-permanent makeup training',
+      'Certificate upon successful completion',
     ],
   },
   {
@@ -1189,7 +1389,7 @@ export const treatmentsSection = {
       image: '/assets/images/treatments/body.jpg',
       href: '/clinic/body',
       offerings: [
-        'Fat Reduction',
+        'Fat Reduction',  
         'Inch Loss Treatments',
         'Body Sculpting',
         'Cellulite Reduction',
@@ -1329,8 +1529,8 @@ export const processSection = {
 }
 
 export const testimonialsSection = {
-  label: 'PATIENTS LOVE US',
-  heading: 'Trusted by Thousands of Happy Patients',
+  label: 'Testimonials',
+  heading: 'Trusted by Thousands of Happy Patients and Students',
   items: [
     {
       id: 1,
@@ -1366,16 +1566,94 @@ export const aboutSection = {
   label: 'ABOUT NIIA',
   heading: 'Redefining Dermatology Care & Education in India',
   description:
-    'At NIIA, we bridge the gap between clinical excellence and professional education. Our state-of-the-art clinic offers world-class dermatological treatments, while our NIIA institute trains the next generation of aesthetic medicine specialists.',
+    'At NIA, we bridge the gap between clinical excellence and professional education. Our state-of-the-art clinic offers world-class dermatological treatments, while our NIIA institute trains the next generation of aesthetic medicine specialists.',
   cta: 'Know More About Us',
   ctaHref: '/about',
-  image: '/assets/images/about/clinic-interior.png',
+  media: {
+    src: '/assets/images/about/clinic-interior.png',
+    alt: 'NIA — Next India Institute of Aesthetics academy and clinic',
+    width: 1254,
+    height: 1254,
+  },
   features: [
     { title: 'Expert Dermatologists', description: 'Board-certified specialists with international training' },
     { title: 'Advanced Technology', description: 'Latest FDA-approved equipment and treatment protocols' },
     { title: 'Holistic Approach', description: 'Personalized care addressing root causes, not just symptoms' },
     { title: 'Education Excellence', description: 'Internationally recognized curriculum and certifications' },
   ],
+}
+
+export const aboutPage = {
+  label: 'ABOUT US',
+  heading: 'Where Clinical Care Meets Aesthetic Education',
+  description:
+    'NIIA brings together expert dermatology, advanced treatments, and structured professional training under one trusted name.',
+  intro:
+    'Next India Institute of Aesthetics (NIIA) was built on a simple belief: exceptional patient care and exceptional education should go hand in hand. Our clinic delivers personalized dermatological and aesthetic treatments, while our institute equips doctors and beauty professionals with the skills, confidence, and clinical exposure to grow in this fast-evolving field.',
+  facultyLabel: 'OUR TEAM',
+  facultyHeading: 'Meet Our Faculty & Doctors',
+  facultyDescription:
+    'A multidisciplinary team of dermatologists, aesthetic physicians, and clinical trainers guiding every treatment and training program.',
+}
+
+export const aboutFeaturedFaculty = {
+  name: 'Dr Vipul Shandilya',
+  designation: 'Aesthetic Medicine Consultant',
+  specialty: 'Aesthetic Medicine & Neurorehabilitation',
+  image: '/assets/images/faculty/vipul-shandilya.jpeg',
+  bio:
+    'Dr Vipul Shandilya is a renowned Aesthetic Medicine Consultant and Neurorehabilitation specialist. With over 20 years of medical experience, he is an international trainer for Allergan.',
+  credentials: [
+    'Aesthetic Medicine Consultant',
+    'Neurorehabilitation Specialist',
+    '20+ Years Medical Experience',
+    'International Trainer — Allergan',
+  ],
+}
+
+export const aboutFaculty = [
+  {
+    id: 'dermatologist',
+    name: 'Dr. Priya Nair',
+    designation: 'Senior Dermatologist',
+    specialty: 'Medical & Cosmetic Dermatology',
+    image: '/assets/images/faculty/doctor-1.jpg',
+    description:
+      'Specializes in acne, pigmentation, and anti-aging treatments with a focus on safe, results-driven protocols tailored to Indian skin types.',
+  },
+  {
+    id: 'aesthetic-physician',
+    name: 'Dr. Arjun Mehta',
+    designation: 'Aesthetic Physician',
+    specialty: 'Injectables & Laser Therapies',
+    image: '/assets/images/faculty/doctor-2.jpg',
+    description:
+      'Leads hands-on training in botulinum toxin, dermal fillers, and laser procedures with emphasis on facial anatomy and natural-looking outcomes.',
+  },
+  {
+    id: 'hair-specialist',
+    name: 'Dr. Sneha Kapoor',
+    designation: 'Hair & Trichology Specialist',
+    specialty: 'Hair Restoration',
+    image: '/assets/images/faculty/doctor-3.jpg',
+    description:
+      'Expert in hair loss diagnosis, PRP therapy, and regenerative hair treatments — bridging clinical trichology with modern aesthetic practice.',
+  },
+  {
+    id: 'clinical-trainer',
+    name: 'Ms. Ananya Desai',
+    designation: 'Lead Clinical Trainer',
+    specialty: 'Skin & Hair Aesthetics',
+    image: '/assets/images/faculty/trainer-1.jpg',
+    description:
+      'Guides certificate and workshop students through practical sessions in facials, peels, and clinic protocols with a strong focus on hygiene and technique.',
+  },
+]
+
+export const aboutCta = {
+  heading: 'Want to know more about us?',
+  buttonLabel: 'Get in Touch',
+  buttonHref: '/contact',
 }
 
 export const blogPosts = [

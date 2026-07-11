@@ -19,11 +19,9 @@ export default function Hero() {
   }, [next])
 
   const slide = heroSlides[current]
-  const bgImage = heroImages[current] || PLACEHOLDER_HERO
 
   return (
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
-      {/* Background slides */}
       {heroSlides.map((_, i) => (
         <div
           key={i}
@@ -35,45 +33,44 @@ export default function Hero() {
         />
       ))}
 
-      {/* Black tint overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/80 sm:from-black/65 sm:via-black/55 sm:to-black/70" />
 
-      {/* Content — centered */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-        <p className="mb-4 text-xs font-medium tracking-[0.25em] text-nia-gold sm:text-sm">
+        <p className="mb-4 text-xs font-medium tracking-[0.25em] text-nia-gold [text-shadow:0_2px_8px_rgba(0,0,0,0.9)] sm:text-sm">
           {slide.tag}
         </p>
-        <h1 className="max-w-4xl font-serif text-4xl leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="max-w-4xl font-serif text-4xl leading-tight text-white [text-shadow:0_4px_14px_rgba(0,0,0,0.95)] sm:text-5xl md:text-6xl lg:text-7xl">
           {slide.heading}{' '}
-          <em className="not-italic text-nia-gold">{slide.headingAccent}</em>
+          <em className="not-italic text-nia-gold [text-shadow:0_4px_14px_rgba(0,0,0,0.9)]">
+            {slide.headingAccent}
+          </em>
         </h1>
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
+        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/90 [text-shadow:0_2px_10px_rgba(0,0,0,0.95)] sm:text-base">
           {slide.description}
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Link
             to="/clinic"
-            className="min-w-[220px] bg-nia-gold px-8 py-3.5 text-sm rounded-md font-semibold tracking-wide text-nia-dark transition-colors hover:bg-nia-gold-light"
+            className="gold-metallic gold-metallic--interactive min-w-[220px] rounded-md px-8 py-3.5 text-sm font-semibold tracking-wide text-nia-dark"
           >
             Explore Clinic Services
           </Link>
           <Link
             to="/institute"
-            className="min-w-[220px] border border-nia-gold px-8 py-3.5 text-sm font-semibold rounded-md tracking-wide text-white transition-colors hover:bg-nia-gold hover:text-nia-dark"
+            className="min-w-[220px] rounded-md border border-nia-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-nia-gold hover:text-nia-dark"
           >
             View Institute Courses
           </Link>
         </div>
       </div>
 
-      {/* Arrows */}
       <button
         type="button"
         onClick={prev}
         className="absolute left-4 top-1/2 z-20 -translate-y-1/2 p-2 text-white/70 transition-colors hover:text-nia-gold lg:left-8"
         aria-label="Previous slide"
       >
-        <ChevronLeftIcon className="w-8 h-8" />
+        <ChevronLeftIcon className="h-8 w-8" />
       </button>
       <button
         type="button"
@@ -81,10 +78,9 @@ export default function Hero() {
         className="absolute right-4 top-1/2 z-20 -translate-y-1/2 p-2 text-white/70 transition-colors hover:text-nia-gold lg:right-8"
         aria-label="Next slide"
       >
-        <ChevronRightIcon className="w-8 h-8" />
+        <ChevronRightIcon className="h-8 w-8" />
       </button>
 
-      {/* Dots */}
       <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2">
         {heroSlides.map((_, i) => (
           <button

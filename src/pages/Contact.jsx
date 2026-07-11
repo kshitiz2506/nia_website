@@ -1,6 +1,12 @@
 import { useMemo, useState } from 'react'
 import PageMeta from '../components/layout/PageMeta'
-import { PhoneIcon } from '../components/layout/icons/Icons'
+import {
+  EnvelopeIcon,
+  MapPinIcon,
+  PaperPlaneIcon,
+  PhoneIcon,
+} from '../components/layout/icons/Icons'
+import { useReveal } from '../components/ui/Reveal'
 import { contactPage, siteInfo } from '../content/siteContent'
 import { staticPageSeo } from '../content/seo'
 import { submitContactForm } from '../lib/contactApi'
@@ -15,7 +21,7 @@ const EMPTY_FORM = {
 }
 
 const inputClassName =
-  'mt-2 w-full rounded-xl border border-nia-dark/10 bg-white px-4 py-3 text-sm text-nia-dark outline-none transition-colors placeholder:text-nia-dark/40 focus:border-nia-gold/50 focus:ring-2 focus:ring-nia-gold/20'
+  'mt-1.5 w-full rounded-lg border border-nia-dark/10 bg-white px-4 py-3 text-sm text-nia-dark outline-none transition-colors placeholder:text-nia-dark/35 focus:border-nia-gold/50 focus:ring-2 focus:ring-nia-gold/20'
 
 function FieldError({ message }) {
   if (!message) return null
@@ -25,7 +31,7 @@ function FieldError({ message }) {
 function FormField({ id, label, required, error, children }) {
   return (
     <div>
-      <label htmlFor={id} className="text-sm font-medium text-nia-dark">
+      <label htmlFor={id} className="text-sm text-nia-dark/60">
         {label} {required && <span className="text-nia-gold-dark">*</span>}
       </label>
       {children}
@@ -41,11 +47,41 @@ function todayIsoDate() {
   return local.toISOString().slice(0, 10)
 }
 
+function formatPhone(phone) {
+  const digits = phone.replace(/\D/g, '')
+  if (digits.startsWith('91') && digits.length === 12) {
+    return `+91 ${digits.slice(2, 7)} ${digits.slice(7)}`
+  }
+  return phone
+}
+
+function LocationDetail({ icon: Icon, children, href }) {
+  const content = (
+    <span className="flex items-start gap-3 text-sm leading-relaxed text-nia-dark/75">
+      <Icon className="mt-0.5 h-4 w-4 shrink-0 text-nia-gold" />
+      <span>{children}</span>
+    </span>
+  )
+
+  if (href) {
+    return (
+      <a href={href} className="transition-colors hover:text-nia-gold-dark">
+        {content}
+      </a>
+    )
+  }
+
+  return content
+}
+
 export default function Contact() {
   const seo = staticPageSeo.contact
   const { label, heading, description, form, inquiryOptions, sideHeading } = contactPage
   const phoneHref = `tel:${siteInfo.phone.replace(/\s/g, '')}`
   const minDate = useMemo(() => todayIsoDate(), [])
+  const headerReveal = useReveal(0)
+  const formReveal = useReveal(0)
+  const asideReveal = useReveal(1)
 
   const [formData, setFormData] = useState(EMPTY_FORM)
   const [fieldErrors, setFieldErrors] = useState({})
@@ -89,7 +125,7 @@ export default function Contact() {
 
       <section className="bg-nia-dark pb-14 pt-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <header className="mx-auto max-w-3xl text-center">
+          <header {...headerReveal.revealProps} className="mx-auto max-w-3xl text-center">
             <span className="inline-block rounded-full border border-nia-gold/60 px-4 py-1.5 text-xs font-medium tracking-[0.15em] text-nia-gold">
               {label}
             </span>
@@ -100,33 +136,12 @@ export default function Contact() {
       </section>
 
       <section className="bg-nia-offwhite py-12 pb-20 sm:py-16">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-5 lg:gap-16 lg:px-8">
-          <aside className="lg:col-span-2">
-            <h2 className="font-serif text-2xl text-nia-dark">{sideHeading}</h2>
-            <ul className="mt-6 space-y-5 text-sm text-nia-dark/80">
-              <li>
-                <a
-                  href={phoneHref}
-                  className="flex items-center gap-3 font-medium text-nia-gold-dark transition-colors hover:text-nia-gold"
-                >
-                  <PhoneIcon className="h-4 w-4 shrink-0 text-nia-gold" />
-                  {siteInfo.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${siteInfo.email}`}
-                  className="block transition-colors hover:text-nia-gold-dark"
-                >
-                  {siteInfo.email}
-                </a>
-              </li>
-              <li className="leading-relaxed">{siteInfo.address}</li>
-            </ul>
-          </aside>
-
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-5 lg:gap-12 lg:px-8">
           <div className="lg:col-span-3">
-            <div className="rounded-2xl border border-nia-dark/10 bg-white p-6 shadow-sm sm:p-8">
+            <div
+              {...formReveal.revealProps}
+              className="rounded-2xl bg-white p-6 shadow-[0_4px_10px_rgba(0,0,0,0.05)] sm:p-8"
+            >
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <FormField id="name" label={form.nameLabel} required error={fieldErrors.name}>
@@ -204,7 +219,7 @@ export default function Contact() {
                     required
                     value={formData.inquiryType}
                     onChange={(e) => updateField('inquiryType', e.target.value)}
-                    className={`${inputClassName} ${!formData.inquiryType ? 'text-nia-dark/40' : ''}`}
+                    className={`${inputClassName} ${!formData.inquiryType ? 'text-nia-dark/35' : ''}`}
                   >
                     <option value="" disabled>
                       {form.inquiryPlaceholder}
@@ -246,13 +261,36 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full rounded-xl bg-nia-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-nia-dark transition-colors hover:bg-nia-gold-light disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  className="gold-metallic gold-metallic--interactive inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold tracking-wide text-nia-dark disabled:cursor-not-allowed disabled:opacity-60"
                 >
+                  <PaperPlaneIcon className="h-4 w-4" />
                   {status === 'submitting' ? form.submittingLabel : form.submitLabel}
                 </button>
               </form>
             </div>
           </div>
+
+          <aside {...asideReveal.revealProps} className="lg:col-span-2">
+            <h2 className="font-serif text-2xl text-nia-dark md:text-3xl">{sideHeading}</h2>
+            <div className="mt-6 rounded-2xl bg-white p-6 shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
+              <h3 className="font-serif text-lg text-nia-dark">{siteInfo.fullName}</h3>
+              <ul className="mt-5 space-y-4">
+                <li>
+                  <LocationDetail icon={MapPinIcon}>{siteInfo.address}</LocationDetail>
+                </li>
+                <li>
+                  <LocationDetail icon={PhoneIcon} href={phoneHref}>
+                    {formatPhone(siteInfo.phone)}
+                  </LocationDetail>
+                </li>
+                <li>
+                  <LocationDetail icon={EnvelopeIcon} href={`mailto:${siteInfo.email}`}>
+                    {siteInfo.email}
+                  </LocationDetail>
+                </li>
+              </ul>
+            </div>
+          </aside>
         </div>
       </section>
     </div>
