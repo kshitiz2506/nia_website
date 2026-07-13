@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import PageMeta from '../components/layout/PageMeta'
+import AccreditationsSection from '../components/home/AccreditationsSection'
 import TestimonialsSection from '../components/home/TestimonialsSection'
 import { useReveal } from '../components/ui/Reveal'
 import {
@@ -226,11 +227,7 @@ function AboutCta({ heading, buttonLabel, buttonHref }) {
         <h2 {...title.revealProps} className="font-serif text-2xl text-nia-dark md:text-3xl">
           {heading}
         </h2>
-        <Link
-          {...action.revealProps}
-          to={buttonHref}
-          className="rounded-md bg-nia-dark px-8 py-3 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-black"
-        >
+        <Link {...action.revealProps} to={buttonHref} className="btn-on-gold">
           {buttonLabel}
         </Link>
       </div>
@@ -271,6 +268,8 @@ export default function About() {
           </p>
         </div>
       </section>
+
+      <AccreditationsSection variant="light" showDescriptions className="bg-nia-offwhite pb-16" />
 
       <TestimonialsSection />
       <AboutCta {...aboutCta} />

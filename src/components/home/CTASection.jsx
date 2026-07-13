@@ -29,10 +29,7 @@ export default function CTASection() {
               {item.label}
             </Link>
           ))}
-          <Link
-            to={buttonHref}
-            className="rounded-md bg-nia-dark px-8 py-3 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-black"
-          >
+          <Link to={buttonHref} className="btn-on-gold">
             {buttonLabel}
           </Link>
         </div>

@@ -10,6 +10,7 @@ import { useReveal } from '../components/ui/Reveal'
 import { contactPage, siteInfo } from '../content/siteContent'
 import { staticPageSeo } from '../content/seo'
 import { submitContactForm } from '../lib/contactApi'
+import { formatPhone, phoneDigits } from '../lib/formatPhone'
 
 const EMPTY_FORM = {
   name: '',
@@ -47,14 +48,6 @@ function todayIsoDate() {
   return local.toISOString().slice(0, 10)
 }
 
-function formatPhone(phone) {
-  const digits = phone.replace(/\D/g, '')
-  if (digits.startsWith('91') && digits.length === 12) {
-    return `+91 ${digits.slice(2, 7)} ${digits.slice(7)}`
-  }
-  return phone
-}
-
 function LocationDetail({ icon: Icon, children, href }) {
   const content = (
     <span className="flex items-start gap-3 text-sm leading-relaxed text-nia-dark/75">
@@ -77,7 +70,7 @@ function LocationDetail({ icon: Icon, children, href }) {
 export default function Contact() {
   const seo = staticPageSeo.contact
   const { label, heading, description, form, inquiryOptions, sideHeading } = contactPage
-  const phoneHref = `tel:${siteInfo.phone.replace(/\s/g, '')}`
+  const phoneHref = `tel:${phoneDigits(siteInfo.phone)}`
   const minDate = useMemo(() => todayIsoDate(), [])
   const headerReveal = useReveal(0)
   const formReveal = useReveal(0)
@@ -261,7 +254,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="gold-metallic gold-metallic--interactive inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold tracking-wide text-nia-dark disabled:cursor-not-allowed disabled:opacity-60"
+                  className="btn-gold btn-gold--lg disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <PaperPlaneIcon className="h-4 w-4" />
                   {status === 'submitting' ? form.submittingLabel : form.submitLabel}

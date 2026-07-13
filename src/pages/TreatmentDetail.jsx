@@ -9,16 +9,9 @@ import {
 import { ArrowRightIcon, CheckIcon } from '../components/layout/icons/Icons'
 import PageMeta from '../components/layout/PageMeta'
 import { useReveal } from '../components/ui/Reveal'
+import { formatPhone, phoneDigits } from '../lib/formatPhone'
 
-const phoneHref = `tel:${siteInfo.phone.replace(/\s/g, '')}`
-
-function formatPhone(phone) {
-  const digits = phone.replace(/\D/g, '')
-  if (digits.startsWith('91') && digits.length === 12) {
-    return `+91 ${digits.slice(2, 7)} ${digits.slice(7)}`
-  }
-  return phone
-}
+const phoneHref = `tel:${phoneDigits(siteInfo.phone)}`
 
 function OfferingItem({ name, index }) {
   const { revealProps } = useReveal(index)
@@ -113,14 +106,14 @@ export default function TreatmentDetail() {
                 <Link
                   {...actionReveal.revealProps}
                   to="/contact"
-                  className="btn-gold btn-gold--md mt-8 inline-flex items-center justify-center bg-nia-gold px-5 py-3 text-nia-dark tracking-wide"
+                  className="btn-gold btn-gold--md mt-8"
                 >
                   Book a Consultation
                   <ArrowRightIcon className="h-4 w-4" />
                 </Link>
               </div>
 
-              <aside {...asideReveal.revealProps} className="lg:relative lg:top-21">
+              <aside {...asideReveal.revealProps}>
                 <div className="rounded-2xl bg-white p-8 shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
                   <h2 className="font-serif text-2xl text-nia-dark md:text-3xl">{whyHeading}</h2>
 

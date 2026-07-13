@@ -49,10 +49,7 @@ export default function Hero() {
           {slide.description}
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          <Link
-            to="/clinic"
-            className="gold-metallic gold-metallic--interactive min-w-[220px] rounded-md px-8 py-3.5 text-sm font-semibold tracking-wide text-nia-dark"
-          >
+          <Link to="/clinic" className="btn-gold btn-gold--lg min-w-[220px]">
             Explore Clinic Services
           </Link>
           <Link

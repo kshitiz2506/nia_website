@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router'
 import { navLinks, siteInfo } from '../../content/siteContent'
+import Logo from './Logo'
 import {
   desktopDropdownItemClass,
   desktopDropdownTriggerClass,
@@ -11,7 +12,7 @@ import {
   mobileDropdownTriggerClass,
   mobileNavLinkClass,
 } from '../../lib/navActive'
-import Logo from './Logo'
+import { formatPhone, phoneDigits } from '../../lib/formatPhone'
 import {
   PhoneIcon,
   CalendarIcon,
@@ -20,7 +21,130 @@ import {
   CloseIcon,
 } from './icons/Icons'
 
-const phoneHref = `tel:${siteInfo.phone.replace(/\s/g, '')}`
+const callOptions = [
+  { label: siteInfo.phoneLabel, number: siteInfo.phone },
+  { label: siteInfo.phone2Label, number: siteInfo.phone2 },
+].filter((option) => option.number)
+
+function toTelHref(number) {
+  return `tel:${phoneDigits(number)}`
+}
+
+function CallDropdown({ className, iconOnly = false, align = 'right', onSelect }) {
+  const [open, setOpen] = useState(false)
+  const hasMultipleOptions = callOptions.length > 1
+  const primaryOption = callOptions[0]
+
+  if (!primaryOption) return null
+
+  if (!hasMultipleOptions) {
+    return (
+      <a href={toTelHref(primaryOption.number)} className={className} aria-label="Call now">
+        <PhoneIcon className={iconOnly ? 'h-4 w-4' : 'h-3.5 w-3.5 text-nia-gold'} />
+        {!iconOnly && 'CALL NOW'}
+      </a>
+    )
+  }
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        className={className}
+        onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        aria-label="Choose a number to call"
+      >
+        <PhoneIcon className={iconOnly ? 'h-4 w-4' : 'h-3.5 w-3.5 text-nia-gold'} />
+        {!iconOnly && (
+          <>
+            CALL NOW
+            <ChevronDownIcon
+              className={`h-3 w-3 transition-transform ${open ? 'rotate-180' : ''}`}
+            />
+          </>
+        )}
+      </button>
+
+      {open && (
+        <div
+          role="menu"
+          className={`absolute top-full z-50 mt-2 min-w-[15rem] overflow-hidden rounded-lg border border-white/10 bg-nia-dark-light py-2 shadow-xl ${
+            align === 'right' ? 'right-0' : 'left-0'
+          }`}
+        >
+          <p className="px-4 pb-2 text-xs font-medium tracking-wide text-white/50">Choose a line</p>
+          {callOptions.map((option) => (
+            <a
+              key={option.label}
+              role="menuitem"
+              href={toTelHref(option.number)}
+              className={`${desktopDropdownItemClass(false)} flex flex-col gap-0.5`}
+              onClick={() => {
+                setOpen(false)
+                onSelect?.()
+              }}
+            >
+              <span className="font-medium">{option.label}</span>
+              <span className="text-xs text-white/60">{formatPhone(option.number)}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function MobileCallOptions({ onSelect }) {
+  const [open, setOpen] = useState(false)
+
+  if (callOptions.length <= 1) {
+    const option = callOptions[0]
+    if (!option) return null
+
+    return (
+      <a href={toTelHref(option.number)} className="nav-btn-call gold-border flex w-full justify-center py-3">
+        <PhoneIcon className="h-5 w-5 text-nia-gold" />
+        CALL NOW
+      </a>
+    )
+  }
+
+  return (
+    <div className="w-full">
+      <button
+        type="button"
+        className="nav-btn-call gold-border flex w-full items-center justify-center gap-2 py-3"
+        onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+      >
+        <PhoneIcon className="h-5 w-5 text-nia-gold" />
+        CALL NOW
+        <ChevronDownIcon className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && (
+        <div className="mt-2 flex flex-col gap-2">
+          {callOptions.map((option) => (
+            <a
+              key={option.label}
+              href={toTelHref(option.number)}
+              className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left transition-colors hover:border-nia-gold/40 hover:bg-white/10"
+              onClick={onSelect}
+            >
+              <p className="text-sm font-medium text-white">{option.label}</p>
+              <p className="mt-0.5 text-sm text-white/60">{formatPhone(option.number)}</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 function NavDropdown({ label, section, items, pathname, hash }) {
   const [open, setOpen] = useState(false)
@@ -150,13 +274,10 @@ export default function Navbar() {
           </div>
 
           <div className="flex shrink-0 items-center gap-3">
-            <a
-              href={phoneHref}
+            <CallDropdown
               className="nav-icon-btn gold-border flex bg-white/5 text-nia-gold hover:bg-white/10 sm:hidden"
-              aria-label="Call now"
-            >
-              <PhoneIcon className="h-4 w-4" />
-            </a>
+              iconOnly
+            />
             <Link
               to="/contact"
               className="nav-icon-btn nav-btn-book gold-metallic gold-glow book-pulse flex text-nia-dark sm:hidden"
@@ -165,10 +286,7 @@ export default function Navbar() {
               <CalendarIcon className="h-4 w-4" />
             </Link>
 
-            <a href={phoneHref} className="nav-btn-call gold-border hidden sm:flex">
-              <PhoneIcon className="h-3.5 w-3.5 text-nia-gold" />
-              CALL NOW
-            </a>
+            <CallDropdown className="nav-btn-call gold-border hidden sm:flex" />
             <Link
               to="/contact"
               className="nav-btn-book gold-metallic gold-metallic--interactive gold-glow book-pulse hidden sm:flex"
@@ -253,13 +371,10 @@ export default function Navbar() {
             </div>
 
             <div className="mt-8 flex flex-col gap-4">
-              <a href={phoneHref} className="nav-btn-call gold-border flex w-full justify-center py-3">
-                <PhoneIcon className="h-5 w-5 text-nia-gold" />
-                CALL NOW
-              </a>
+              <MobileCallOptions onSelect={() => setMobileOpen(false)} />
               <Link
                 to="/contact"
-                className="nav-btn-book gold-metallic gold-metallic--interactive gold-glow flex w-full justify-center py-3"
+                className="nav-btn-book gold-metallic gold-metallic--interactive gold-glow book-pulse flex w-full justify-center py-3"
                 onClick={() => setMobileOpen(false)}
               >
                 <CalendarIcon className="h-5 w-5" />

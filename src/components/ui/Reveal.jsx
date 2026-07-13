@@ -23,11 +23,13 @@ export function useReveal(index = 0, { immediate = false } = {}) {
   const ref = useRef(null)
   const [status, setStatus] = useState(immediate ? 'live' : 'idle')
 
+  // The synchronous setStatus calls below require post-mount layout data
+  // (matchMedia / getBoundingClientRect) that isn't available during render,
+  // so this genuinely needs to live inside an effect rather than be derived state.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useLayoutEffect(() => {
-    if (immediate) {
-      setStatus('live')
-      return
-    }
+    // Initial state above already accounts for `immediate` — nothing to sync here.
+    if (immediate) return
 
     const node = ref.current
     if (!node) return
@@ -57,6 +59,7 @@ export function useReveal(index = 0, { immediate = false } = {}) {
     observer.observe(node)
     return () => observer.disconnect()
   }, [immediate])
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return {
     inView: status === 'live',

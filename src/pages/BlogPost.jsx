@@ -99,10 +99,7 @@ export default function BlogPost() {
           >
             <h2 className="font-serif text-2xl text-white">{heading}</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">{description}</p>
-            <Link
-              to={buttonHref}
-              className="btn-gold btn-gold--md mt-6 inline-flex items-center justify-center bg-nia-gold px-5 py-3 text-nia-dark"
-            >
+            <Link to={buttonHref} className="btn-gold btn-gold--md mt-6">
               {buttonLabel}
               <ArrowRightIcon className="h-4 w-4" />
             </Link>

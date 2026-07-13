@@ -10,11 +10,19 @@ export const siteInfo = {
   tagline: 'NEXT INDIA',
   logo: '/assets/images/logo/clinic_logo.png',
   logoAlt: 'NIA Aesthetics — Advanced Aesthetic & Wellness Clinic',
-  phone: '+91 8675200222', 
+  phone: '+91 8675200222',
+  phoneLabel: 'Clinic',
   phone2: '+91 7065123679',
+  phone2Label: 'Admissions',
   whatsapp: '+91 7065123679',
   email: 'customersupport@niia.in',
-  address: 'A 1/230 , Ground Floor, Golf Course Rd, Opposite Metro Pillar 237, Sector 55, Gurugram, Haryana, 122011',
+  address:
+    'A 1/230 , Ground Floor, Golf Course Rd, Opposite Metro Pillar 237, Sector 55, Gurugram, Haryana, 122011',
+  // Add real profile URLs when ready — icons stay visible in the footer,
+  // but link to '#' until a URL is set here.
+  instagram: '',
+  facebook: '',
+  linkedin: '',
 }
 
 export const navLinks = {
@@ -31,7 +39,7 @@ export const navLinks = {
   ],
   institute: [
     { label: 'All Courses', href: '/institute' },
-    { label: 'Fellowship Programs', href: '/institute#fellowship-programs' },
+    { label: 'Fellowship Programs', href: '/institute#certificate-programs' },
     { label: 'Certificate Programs', href: '/institute#certificate-programs' },
     { label: 'Workshop Programs', href: '/institute#workshop-programs' },
   ],
@@ -88,10 +96,10 @@ export const heroSlides = [
 // Image paths — replace with your uploaded files in public/assets/images/hero/
 export const heroImages = [
   '/assets/images/hero/slide-1.png',
-  '/assets/images/hero/slide-2.png',
-  '/assets/images/hero/slide-3.png',
+  '/assets/images/hero/slide-2.jpg',
+  '/assets/images/hero/slide-3.jpg',
   '/assets/images/hero/slide-4.png',
-  '/assets/images/hero/slide-5.png',
+  '/assets/images/hero/slide-5.jpg',
 ]
 
 export const stats = [
@@ -100,6 +108,48 @@ export const stats = [
   { target: 100, suffix: '+', decimals: 0, label: 'Students Trained' },
   { target: 4.9, suffix: '', decimals: 1, label: 'Patient Rating' },
 ]
+
+export const accreditations = {
+  label: 'ACCREDITATIONS',
+  heading: 'Certified & Recognized',
+  description:
+    'NIIA upholds nationally and internationally recognized standards across clinical care and professional training.',
+  items: [
+    {
+      id: 'iso',
+      name: 'ISO',
+      fullName: 'International Organization for Standardization',
+      description:
+        'Certified quality management systems ensuring consistent standards across our clinic and institute operations.',
+      logo: '/assets/images/certifications/ISO.png',
+    },
+    {
+      id: 'nsdc',
+      name: 'NSDC',
+      fullName: 'National Skill Development Corporation',
+      description:
+        'Aligned with India\'s national skilling ecosystem for industry-relevant aesthetic medicine training.',
+      logo: '/assets/images/certifications/nsdc.png',
+    },
+    {
+      id: 'bnwssc',
+      name: 'BNWSSC',
+      fullName: 'Beauty & Wellness Sector Skill Council',
+      description:
+        'Recognized training partner under the beauty and wellness sector skills framework.',
+      logo: '/assets/images/certifications/b&wssc.png',
+    },
+    {
+      id: 'iao',
+      name: 'IAO',
+      fullName: 'International Accreditation Organization',
+      description:
+        'Internationally accredited programs meeting global education and training benchmarks.',
+      logo: '/assets/images/certifications/iao.jpg',
+    },
+  ],
+}
+
 export const clinicPage = {
   label: 'OUR CLINIC',
   heading: 'Clinic Services',
@@ -150,11 +200,11 @@ const instituteCourseList = [
     title: 'Short-Term Course in Skin & Hair Aesthetics',
     description:
       'Fast-Track Your Skills in Cosmetology. An intensive program covering essential skin and hair treatments, consultation techniques, treatment planning, and practical sessions — ideal for beginners and practicing professionals looking to upgrade their skills.',
-    image: '/assets/images/courses/certificate.jpg',
+    image: '/assets/images/courses/short-term-skin-hair-aesthetics.jpg',
     duration: '15 Days',
     format: 'On-Campus',
     eligibility: '12th Pass',
-    price: "50000",
+    price: 50000,
     curriculum: [
       {
         title: 'Introduction to Skin & Hair Aesthetics',
@@ -196,7 +246,7 @@ const instituteCourseList = [
     title: 'Advance Aesthetic Skin Technician Course (AAST)',
     description:
       'Your first step towards a career in aesthetic skincare. Gain practical expertise in skin analysis, facial treatments, laser assistance, and clinic protocols through hands-on training.',
-    image: '/assets/images/courses/certificate.jpg',
+    image: '/assets/images/courses/aast.jpg',
     duration: '1 Month',
     format: 'On-Campus',
     eligibility: '12th Pass',
@@ -269,10 +319,10 @@ const instituteCourseList = [
     id: 'aesthetic-medicine',
     program: 'fellowship',
     category: 'Fellowship',
-    title: 'Certificate in Aesthetic Medicine',
+    title: 'Fellowship in Aesthetic Medicine',
     description:
       'Intensive certification covering injectables, facial aesthetics, and non-surgical rejuvenation techniques for medical professionals.',
-    image: '/assets/images/courses/certificate.jpg',
+    image: '/assets/images/courses/aesthetic-medicine.jpg',
     duration: '1.5 Months',
     format: 'On-Campus',
     price: "150000",
@@ -313,7 +363,7 @@ const instituteCourseList = [
     title: 'Certificate Course in Clinical Cosmetology (CCCC)',
     description:
       'Master the science of advanced skin and hair treatments with practical exposure to modern aesthetic procedures and patient management.',
-    image: '/assets/images/courses/certificate.jpg',
+    image: '/assets/images/courses/cccc.jpg',
     duration: '1 Month',
     format: 'On-Campus',
     eligibility: 'BAMS, BUMS, BPT, BDS & BNYS',
@@ -400,7 +450,7 @@ const instituteCourseList = [
     title: 'Laser & IPL Certification',
     description:
       'Master laser hair removal, skin resurfacing, and IPL treatments with supervised hands-on sessions on USFDA-approved devices.',
-    image: '/assets/images/courses/diploma.jpg',
+    image: '/assets/images/courses/laser-ipl.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 25000,
@@ -445,7 +495,7 @@ const instituteCourseList = [
     title: 'PRP & GFC Certification',
     description:
       'Learn platelet-rich plasma and growth factor concentrate therapies for hair restoration and skin rejuvenation.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/prp-gfc.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 15000,
@@ -490,7 +540,7 @@ const instituteCourseList = [
     title: 'Certificate Course in Semi-Permanent Makeup (SPMU) Advanced',
     description:
       'Master luxury semi-permanent makeup with expert training, advanced techniques, and hands-on practice. Build confidence, precision, and a rewarding career in the world of aesthetic beauty.',
-    image: '/assets/images/courses/certificate.jpg',
+    image: '/assets/images/courses/spmu-advanced.jpg',
     duration: '7 Days',
     format: 'On-Campus',
     price: 70000,
@@ -543,7 +593,7 @@ const instituteCourseList = [
     title: 'Certificate Course in Semi-Permanent Makeup (SPMU) Basic',
     description:
       'Build foundational skills in semi-permanent makeup with focused theoretical learning and guided hands-on practice — an ideal starting point for beauty professionals entering the field of permanent cosmetics.',
-    image: '/assets/images/courses/certificate.jpg',
+    image: '/assets/images/courses/spmu-basic.jpg',
     duration: '5 Days',
     format: 'On-Campus',
     price: 40000,
@@ -584,7 +634,7 @@ const instituteCourseList = [
     title: 'Level 1 Filler Workshop',
     description:
       'Master the art of natural facial enhancement with structured hands-on training in filler fundamentals and safe aesthetic practice.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/filler1-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 30000,
@@ -625,7 +675,7 @@ const instituteCourseList = [
     title: 'Level 2 Advanced Filler Workshop',
     description:
       'Advanced contouring with precision and confidence for practitioners looking to upgrade to high-impact filler indications.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/advanced-filler-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 50000,
@@ -658,7 +708,7 @@ const instituteCourseList = [
     title: 'Level 1 Botox Workshop',
     description:
       'Precision in every injection with comprehensive hands-on training across full-face Botox applications.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/botox-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 40000,
@@ -691,7 +741,7 @@ const instituteCourseList = [
     title: 'Thread Lift Workshop',
     description:
       'Lift without surgery through practical training in thread techniques, patient selection, and live demonstrations.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/thread-lift-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 40000,
@@ -724,7 +774,7 @@ const instituteCourseList = [
     title: 'Advanced Thread Lift Course',
     description:
       'Master advanced lifting techniques with specialized thread procedures and complication management strategies.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/thread-lift.png',
     duration: '1 Day',
     format: 'On-Campus',
     price: 70000,
@@ -753,7 +803,7 @@ const instituteCourseList = [
     title: 'Skin Booster Workshop',
     description:
       'Revitalize skin from within through injectable skin quality protocols tailored to hydration and rejuvenation goals.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/skin-booster.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 25000,
@@ -786,7 +836,7 @@ const instituteCourseList = [
     title: 'Exosome & Regenerative Aesthetics Workshop',
     description:
       'Explore the future of skin and hair regeneration with practical regenerative medicine frameworks and protocols.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/exosome-regenerative-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 30000,
@@ -819,7 +869,7 @@ const instituteCourseList = [
     title: 'IV Drip Therapy Workshop',
     description:
       'Wellness through precision medicine with practical IV nutrition and vitamin drip training in clinical settings.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/iv-drip-therapy-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 30000,
@@ -852,7 +902,7 @@ const instituteCourseList = [
     title: 'Laser Hair Reduction Workshop',
     description:
       'Become an expert in laser hair removal through practical, protocol-based, and safety-driven device training.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/laser-hair-reduction-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 40000,
@@ -885,7 +935,7 @@ const instituteCourseList = [
     title: 'Advanced EBD Laser Course',
     description:
       'Master energy-based devices with advanced applications across resurfacing, pigmentation, scars, and combination plans.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/advanced-ebd-laser-course.jpg',
     duration: '2 Days',
     format: 'On-Campus',
     price: 30000,
@@ -914,7 +964,7 @@ const instituteCourseList = [
     title: 'Weight Loss Device Workshop',
     description:
       'Technology-driven body contouring workshop focused on device use, patient profiling, and protocol planning.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/weight-loss-device-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 20000,
@@ -947,7 +997,7 @@ const instituteCourseList = [
     title: 'GLP-1 Weight Management Workshop',
     description:
       'Modern medical weight loss training centered on GLP-1 protocols, patient selection, and follow-up strategy.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/glp1-weight-management-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 25000,
@@ -980,7 +1030,7 @@ const instituteCourseList = [
     title: 'Chemical Peel Masterclass',
     description:
       'Scientific approach to skin renewal through peel depth selection and indication-based protocol design.',
-    image: '/assets/images/courses/certificate.jpg',
+    image: '/assets/images/courses/chemical-peels.jpg',
     duration: '2 Days',
     format: 'On-Campus',
     price: 20000,
@@ -1013,7 +1063,7 @@ const instituteCourseList = [
     title: 'MediFacial Workshop',
     description:
       'Professional facial protocols for every skin type with practical treatment customization training.',
-    image: '/assets/images/courses/diploma.jpg',
+    image: '/assets/images/courses/medifacial-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 20000,
@@ -1046,7 +1096,7 @@ const instituteCourseList = [
     title: 'Mesotherapy Workshop',
     description:
       'Targeted skin and hair rejuvenation training with indication-based mesotherapy planning and injection methods.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/mesotherapy-workshop.jpg',
     duration: '1 Day',
     format: 'On-Campus',
     price: 25000,
@@ -1079,7 +1129,7 @@ const instituteCourseList = [
     title: 'Advanced Trichology Workshop',
     description:
       'Comprehensive hair restoration training covering diagnosis, regenerative therapies, and integrated treatment protocols.',
-    image: '/assets/images/courses/workshops.jpg',
+    image: '/assets/images/courses/advanced-trichology-workshop.jpg',
     duration: '2 Days',
     format: 'On-Campus',
     price: 25000,
@@ -1119,14 +1169,12 @@ function toCourseCard(course) {
   }
 }
 
-export const fellowshipPrograms = {
-  heading: 'Fellowship Programs',
-  items: instituteCourseList.filter((c) => c.program === 'fellowship').map(toCourseCard),
-}
-
 export const certificatePrograms = {
   heading: 'Certificate Programs',
-  items: instituteCourseList.filter((c) => c.program === 'certificate').map(toCourseCard),
+  items: [
+    ...instituteCourseList.filter((c) => c.program === 'fellowship').map(toCourseCard),
+    ...instituteCourseList.filter((c) => c.program === 'certificate').map(toCourseCard),
+  ],
 }
 
 export const workshopPrograms = {
@@ -1336,15 +1384,15 @@ export const coursesSection = {
       id: 'fellowship',
       title: 'Fellowship Programs',
       description: 'Comprehensive diploma courses covering all aspects of aesthetic dermatology and cosmetology.',
-      image: '/assets/images/courses/diploma.jpg',
-      href: '/institute#fellowship-programs',
+      image: '/assets/images/courses/fellowship.jpg',
+      href: '/institute#certificate-programs',
       features: [
-        '6-12 month programs',
+        '2-4 week programs',
         'Clinical rotations',
         'International curriculum',
-        'Job placement support',
+        'Clinical exposure',
       ],
-      cta: 'Explore Felowship Programs',
+      cta: 'Explore Fellowship Programs',
     },
     {
       id: 'workshops',
@@ -1418,7 +1466,7 @@ export const testimonialsSection = {
         'From consultation to aftercare, every step was seamless. The clinic maintains the highest standards of hygiene and patient care. Highly recommended!',
       name: 'Rahul Mehta',
       location: 'Bangalore',
-      image: '/assets/images/testimonials/patient-3.jpg',
+      image: '/assets/images/testimonials/patient-3.png',
       rating: 5,
     },
   ],
@@ -1576,7 +1624,7 @@ export const blogPosts = [
     category: 'Academy',
     date: 'May 20, 2026',
     title: 'A Day in the Life of a Dermatology Resident',
-    image: '/assets/images/blog/blog-1.jpg',
+    image: '/assets/images/blog/blog-4.jpg',
     excerpt:
       'Follow a typical day in our training program — from morning rounds to hands-on procedures and evening case discussions.',
     body: [
@@ -1625,7 +1673,7 @@ export function getBlogBySlug(slug) {
 }
 
 export const ctaSection = {
-  heading: 'Ready to Begin Your Journey With NIIA?',
+  heading: 'Ready to Begin Your Journey With NIA?',
   items: [
     { label: 'Explore Courses', href: '/institute' },
   ],
@@ -1690,6 +1738,54 @@ export const faqPage = {
   ],
 }
 
+/**
+ * Gallery — drop images into public/assets/images/gallery/
+ * then add an entry below (src, title, category, alt).
+ */
+export const galleryPage = {
+  label: 'OUR SPACE',
+  heading: 'Gallery',
+  description:
+    'A look inside our clinic, treatments, and training sessions at Next India Institute of Aesthetics.',
+  emptyMessage: 'No images in this category yet.',
+  categories: [
+    { id: 'all', label: 'All' },
+    { id: 'clinic', label: 'Clinic' },
+    { id: 'treatments', label: 'Treatments' },
+    { id: 'training', label: 'Training' },
+  ],
+  items: [
+    {
+      id: 1,
+      src: '/assets/images/gallery/clinic-ambience.png',
+      title: 'Clinic Ambience',
+      category: 'clinic',
+      alt: 'NIIA clinic interior and welcoming ambience',
+    },
+    {
+      id: 2,
+      src: '/assets/images/gallery/hair-treatment.jpg',
+      title: 'Hair Treatment',
+      category: 'treatments',
+      alt: 'Hair treatment session at NIIA clinic',
+    },
+    {
+      id: 3,
+      src: '/assets/images/gallery/laser-treatment.jpg',
+      title: 'Laser Treatment',
+      category: 'treatments',
+      alt: 'Laser treatment procedure at NIIA',
+    },
+    {
+      id: 4,
+      src: '/assets/images/gallery/workshop-training.jpg',
+      title: 'Workshop Training',
+      category: 'training',
+      alt: 'Hands-on aesthetic medicine workshop at NIIA',
+    },
+  ],
+}
+
 export const contactPage = {
   label: 'GET IN TOUCH',
   heading: 'Contact Us',
@@ -1723,22 +1819,27 @@ export const contactPage = {
 
 export const footer = {
   clinicLinks: [
-    { label:'All Services', href: '/clinic/' },
+    { label: 'All Services', href: '/clinic' },
     { label: 'Hair Treatments', href: '/clinic/hair' },
     { label: 'Skin Treatments', href: '/clinic/skin' },
     { label: 'Anti-Aging', href: '/clinic/anti-aging' },
     { label: 'Laser Treatments', href: '/clinic/laser' },
+    { label: 'Body Contouring', href: '/clinic/body' },
+    { label: 'Dermatology', href: '/clinic/dermatological' },
+    { label: 'Cosmetic Procedures', href: '/clinic/cosmetic' },
   ],
   instituteLinks: [
-    { label: 'Fellowship Programs', href: '/institute#fellowship-programs' },
+    { label: 'All Courses', href: '/institute' },
+    { label: 'Fellowship Programs', href: '/institute#certificate-programs' },
     { label: 'Certificate Courses', href: '/institute#certificate-programs' },
     { label: 'Workshops', href: '/institute#workshop-programs' },
-    { label: 'Faculty', href: '/institute/faculty' },
   ],
   quickLinks: [
     { label: 'About Us', href: '/about' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Privacy Policy', href: '#privacy' },
+    { label: 'FAQs', href: '/faqs' },
+    { label: 'Contact', href: '/contact' },
   ],
-  copyright: `© ${new Date().getFullYear()} NIIA - Next India Institute of Aesthetics. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} NIA — Next India Institute of Aesthetics. All rights reserved.`,
 }

@@ -228,10 +228,7 @@ export default function CourseDetail() {
                     <p className="font-serif text-4xl text-nia-dark">₹{formatPrice(course.price)}</p>
                     <p className="mt-1 text-xs font-medium text-nia-dark/50">{gstLabel}</p>
                   </div>
-                  <Link
-                    to={enrollHref}
-                    className="btn-gold btn-gold--md mt-6 flex w-full items-center justify-center bg-nia-gold px-5 py-3 text-nia-dark tracking-wide"
-                  >
+                  <Link to={enrollHref} className="btn-gold btn-gold--md mt-6 w-full">
                     {enrollLabel}
                     <ArrowRightIcon className="h-4 w-4" />
                   </Link>

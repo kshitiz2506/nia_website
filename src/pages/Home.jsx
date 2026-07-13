@@ -1,5 +1,6 @@
 import Hero from '../components/home/Hero'
 import StatsBar from '../components/home/StatsBar'
+import AccreditationsSection from '../components/home/AccreditationsSection'
 import TreatmentsSection from '../components/home/TreatmentsSection'
 import CoursesSection from '../components/home/CoursesSection'
 import ProcessSection from '../components/home/ProcessSection'
@@ -24,6 +25,7 @@ export default function Home() {
       <TestimonialsSection />
       <AboutSection />
       <BlogSection />
+      <AccreditationsSection />
       <CTASection />
     </>
   )

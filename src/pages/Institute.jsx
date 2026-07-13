@@ -1,7 +1,6 @@
 import { Link } from 'react-router'
 import {
   certificatePrograms,
-  fellowshipPrograms,
   instituteEnrollCta,
   institutePage,
   instituteWhyTrainWithUs,
@@ -10,21 +9,15 @@ import {
 } from '../content/siteContent'
 import { ArrowRightIcon } from '../components/layout/icons/Icons'
 import PageMeta from '../components/layout/PageMeta'
+import AccreditationsSection from '../components/home/AccreditationsSection'
 import { useReveal } from '../components/ui/Reveal'
 import { staticPageSeo } from '../content/seo'
+import { formatPhone, phoneDigits } from '../lib/formatPhone'
 
 const PLACEHOLDER =
   'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80'
 
-const phoneHref = `tel:${siteInfo.phone.replace(/\s/g, '')}`
-
-function formatPhone(phone) {
-  const digits = phone.replace(/\D/g, '')
-  if (digits.startsWith('91') && digits.length === 12) {
-    return `+91 ${digits.slice(2, 7)} ${digits.slice(7)}`
-  }
-  return phone
-}
+const phoneHref = `tel:${phoneDigits(siteInfo.phone)}`
 
 function CourseCard({ item, index }) {
   const { revealProps } = useReveal(index)
@@ -136,12 +129,9 @@ export default function Institute() {
             </div>
           </div>
 
+          <AccreditationsSection variant="light" className="mt-12" />
+
           <div className="mt-16 space-y-16">
-            <ProgramSection
-              id="fellowship-programs"
-              heading={fellowshipPrograms.heading}
-              items={fellowshipPrograms.items}
-            />
             <ProgramSection
               id="certificate-programs"
               heading={certificatePrograms.heading}
@@ -167,11 +157,7 @@ export default function Institute() {
           >
             {enrollDescription}
           </p>
-          <Link
-            {...enrollAction.revealProps}
-            to={buttonHref}
-            className="gold-metallic gold-metallic--interactive mt-8 inline-flex rounded-md px-8 py-3.5 text-sm font-semibold tracking-wide text-nia-dark"
-          >
+          <Link {...enrollAction.revealProps} to={buttonHref} className="btn-gold btn-gold--lg mt-8">
             {buttonLabel}
           </Link>
         </div>

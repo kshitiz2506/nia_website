@@ -1,7 +1,15 @@
 import { Link } from 'react-router'
 import Logo from './Logo'
 import { footer, siteInfo } from '../../content/siteContent'
-import { PhoneIcon, SocialIcons } from './icons/Icons'
+import { FacebookIcon, InstagramIcon, LinkedinIcon, PhoneIcon, WhatsappIcon } from './icons/Icons'
+import { phoneDigits } from '../../lib/formatPhone'
+
+const socialLinks = [
+  { name: 'Instagram', Icon: InstagramIcon, href: siteInfo.instagram },
+  { name: 'Facebook', Icon: FacebookIcon, href: siteInfo.facebook },
+  { name: 'LinkedIn', Icon: LinkedinIcon, href: siteInfo.linkedin },
+  { name: 'WhatsApp', Icon: WhatsappIcon, href: `https://wa.me/${phoneDigits(siteInfo.whatsapp)}` },
+]
 
 export default function Footer() {
   return (
@@ -12,17 +20,12 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Logo variant="footer" />
             <div className="mt-6 flex gap-4">
-              {[
-                { Icon: SocialIcons.Instagram, href: siteInfo.instagram },
-                { Icon: SocialIcons.Facebook, href: siteInfo.facebook },
-                { Icon: SocialIcons.Linkedin, href: '#' },
-                { Icon: SocialIcons.Whatsapp, href: `https://wa.me/${siteInfo.whatsapp}` },
-              ].map(({ Icon, href }, i) => (
+              {socialLinks.map(({ name, Icon, href }) => (
                 <a
-                  key={i}
-                  href={href}
+                  key={name}
+                  href={href || '#'}
                   className="text-white/50 transition-colors hover:text-nia-gold"
-                  aria-label="Social link"
+                  aria-label={name}
                 >
                   <Icon />
                 </a>
@@ -77,13 +80,13 @@ export default function Footer() {
             <h4 className="mb-4 text-sm font-semibold tracking-wider text-white">Contact Us</h4>
             <ul className="space-y-3 text-sm text-white/60">
               <li>
-                <a href={`tel:${siteInfo.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-nia-gold">
+                <a href={`tel:${phoneDigits(siteInfo.phone)}`} className="flex items-center gap-2 hover:text-nia-gold">
                   <PhoneIcon className="w-4 h-4 shrink-0 text-nia-gold" />
                   {siteInfo.phone}
                 </a>
               </li>
               <li>
-                <a href={`tel:${siteInfo.phone2.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-nia-gold">
+                <a href={`tel:${phoneDigits(siteInfo.phone2)}`} className="flex items-center gap-2 hover:text-nia-gold">
                   <PhoneIcon className="w-4 h-4 shrink-0 text-nia-gold" />
                   {siteInfo.phone2}
                 </a>
@@ -97,8 +100,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/40">{footer.copyright}</p>
           <div className="flex gap-6">
             <Link to="#privacy" className="text-xs text-white/40 hover:text-nia-gold">

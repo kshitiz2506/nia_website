@@ -180,6 +180,7 @@ h4 {
   border-radius: 0.375rem;
 }
 
+/* Primary CTA — metallic gold gradient (matches .gold-metallic surfaces) */
 .btn-gold {
   display: inline-flex;
   align-items: center;
@@ -188,19 +189,25 @@ h4 {
   padding: 0.625rem 1rem;
   border-radius: 0.625rem;
   border: 1px solid transparent;
-  background-color: var(--color-nia-gold);
+  background-color: var(--color-nia-gold-light);
+  background-image: var(--gradient-gold-metallic);
   color: var(--color-nia-dark);
   text-decoration: none;
   font-weight: 600;
   line-height: 1;
-  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-highlight) 65%, transparent),
+    inset 0 -1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-shadow) 40%, transparent);
+  transition: filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-gold:hover {
-  background-color: var(--color-nia-gold-light);
-  color: var(--color-nia-dark);
+  filter: brightness(1.07);
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--color-nia-gold) 28%, transparent);
+  box-shadow:
+    0 8px 18px color-mix(in srgb, var(--color-nia-gold) 28%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-highlight) 65%, transparent),
+    inset 0 -1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-shadow) 40%, transparent);
 }
 
 .btn-gold:focus-visible {
@@ -213,6 +220,42 @@ h4 {
   padding: 0.75rem 1.125rem;
   font-size: 0.875rem;
   letter-spacing: 0.04em;
+}
+
+.btn-gold--lg {
+  min-height: 3.25rem;
+  padding: 0.875rem 2rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+}
+
+/* Primary CTA for use on top of gold-metallic sections (needs dark contrast) */
+.btn-on-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 0.625rem;
+  background-color: var(--color-nia-dark);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-on-gold:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.btn-on-gold:focus-visible {
+  outline: 2px solid var(--color-nia-dark);
+  outline-offset: 2px;
 }
 
 .nav-icon-btn {

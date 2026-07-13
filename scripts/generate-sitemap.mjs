@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url'
 import {
   blogPosts,
   certificatePrograms,
-  fellowshipPrograms,
   treatmentsSection,
   workshopPrograms,
 } from '../src/content/siteContent.js'
@@ -28,7 +27,6 @@ const staticPaths = [
 
 const treatmentPaths = treatmentsSection.items.map((item) => item.href)
 const coursePaths = [
-  ...fellowshipPrograms.items,
   ...certificatePrograms.items,
   ...workshopPrograms.items,
 ].map((item) => item.href)
