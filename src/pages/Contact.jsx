@@ -48,7 +48,7 @@ function todayIsoDate() {
   return local.toISOString().slice(0, 10)
 }
 
-function LocationDetail({ icon: Icon, children, href }) {
+function LocationDetail({ icon: Icon, children, href, external = false }) {
   const content = (
     <span className="flex items-start gap-3 text-sm leading-relaxed text-nia-dark/75">
       <Icon className="mt-0.5 h-4 w-4 shrink-0 text-nia-gold" />
@@ -58,7 +58,11 @@ function LocationDetail({ icon: Icon, children, href }) {
 
   if (href) {
     return (
-      <a href={href} className="transition-colors hover:text-nia-gold-dark">
+      <a
+        href={href}
+        className="transition-colors hover:text-nia-gold-dark"
+        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
         {content}
       </a>
     )
@@ -269,7 +273,9 @@ export default function Contact() {
               <h3 className="font-serif text-lg text-nia-dark">{siteInfo.fullName}</h3>
               <ul className="mt-5 space-y-4">
                 <li>
-                  <LocationDetail icon={MapPinIcon}>{siteInfo.address}</LocationDetail>
+                  <LocationDetail icon={MapPinIcon} href={siteInfo.mapsUrl} external>
+                    {siteInfo.address}
+                  </LocationDetail>
                 </li>
                 <li>
                   <LocationDetail icon={PhoneIcon} href={phoneHref}>

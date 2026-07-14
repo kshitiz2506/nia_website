@@ -51,7 +51,8 @@ export const staticPageSeo = {
   },
   gallery: {
     title: 'Gallery',
-    description: 'View photos from NIA clinic, training sessions, and aesthetic medicine workshops.',
+    description:
+      'Browse photos and videos from the NIA clinic, treatment results, and aesthetic medicine training sessions.',
     path: '/gallery',
   },
   blog: {

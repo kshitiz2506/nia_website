@@ -4,6 +4,9 @@
  * Drop images into public/assets/images/ (see folder structure).
  */
 
+const clinicAddress =
+  'A 1/230 , Ground Floor, Golf Course Rd, Opposite Metro Pillar 237, Sector 55, Gurugram, Haryana, 122011'
+
 export const siteInfo = {
   name: 'NIA',
   fullName: 'Next India Institute of Aesthetics',
@@ -16,13 +19,13 @@ export const siteInfo = {
   phone2Label: 'Admissions',
   whatsapp: '+91 7065123679',
   email: 'customersupport@niia.in',
-  address:
-    'A 1/230 , Ground Floor, Golf Course Rd, Opposite Metro Pillar 237, Sector 55, Gurugram, Haryana, 122011',
-  // Add real profile URLs when ready — icons stay visible in the footer,
-  // but link to '#' until a URL is set here.
-  instagram: '',
+  address: clinicAddress,
+  mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `Next India Institute of Aesthetics, ${clinicAddress}`,
+  )}`,
+  instagram: 'https://www.instagram.com/niia.in',
   facebook: '',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/next-india-aesthetics-clinic-gurugram-a1456b420/',
 }
 
 export const navLinks = {
@@ -35,7 +38,6 @@ export const navLinks = {
     { label: 'Body Contouring & Wellness', href: '/clinic/body' },
     { label: 'Dermatology Services', href: '/clinic/dermatological' },
     { label: 'Cosmetic Procedures', href: '/clinic/cosmetic' },
-    { label: 'Aesthetic Gynecology', href: '/clinic/aesthetic-gynecology' },
   ],
   institute: [
     { label: 'All Courses', href: '/institute' },
@@ -1523,40 +1525,31 @@ export const aboutFeaturedFaculty = {
 
 export const aboutFaculty = [
   {
-    id: 'dermatologist',
-    name: 'Dr. Priya Nair',
-    designation: 'Senior Dermatologist',
-    specialty: 'Medical & Cosmetic Dermatology',
-    image: '/assets/images/faculty/doctor-1.jpg',
+    id: 'shweta-pradeep-manchanda',
+    name: 'Dr. Shweta Pradeep Manchanda',
+    designation: 'Senior Faculty — Aesthetic Medicine',
+    specialty: 'Dermatology & Aesthetic Medicine',
+    image: '/assets/images/faculty/shweta-pradeep.jpeg',
     description:
-      'Specializes in acne, pigmentation, and anti-aging treatments with a focus on safe, results-driven protocols tailored to Indian skin types.',
+      'Gold medalist and top dermatologist at Skin Clinic in Delhi. Holds MBBS, MD (Dermatology, Venereology & Leprosy), and fellowships in aesthetic medicine. Senior faculty teaching aesthetic medicine with practical knowledge and 18 years of experience.',
   },
   {
-    id: 'aesthetic-physician',
-    name: 'Dr. Arjun Mehta',
-    designation: 'Aesthetic Physician',
-    specialty: 'Injectables & Laser Therapies',
-    image: '/assets/images/faculty/doctor-2.jpg',
+    id: 'sana',
+    name: 'Dr. Sana',
+    designation: 'Trainer — Botox, Fillers & Threads',
+    specialty: 'Aesthetic Medicine · Punjab',
+    image: '/assets/images/faculty/sana.jpeg',
     description:
-      'Leads hands-on training in botulinum toxin, dermal fillers, and laser procedures with emphasis on facial anatomy and natural-looking outcomes.',
+      'BHMS (Punjab) with a Fellowship in Aesthetic Medicine (USA). Post-operative cancer patient and vitiligo permanent makeup expert. Trainer in Botox, fillers, and threads with 7 years of experience.',
   },
   {
-    id: 'hair-specialist',
-    name: 'Dr. Sneha Kapoor',
-    designation: 'Hair & Trichology Specialist',
-    specialty: 'Hair Restoration',
-    image: '/assets/images/faculty/doctor-3.jpg',
+    id: 'poornima-tyagi',
+    name: 'Dr. Poornima Tyagi',
+    designation: 'Faculty — Aesthetic Training',
+    specialty: 'Aesthetic Medicine',
+    image: '/assets/images/faculty/poornima-tyagi.jpeg',
     description:
-      'Expert in hair loss diagnosis, PRP therapy, and regenerative hair treatments — bridging clinical trichology with modern aesthetic practice.',
-  },
-  {
-    id: 'clinical-trainer',
-    name: 'Ms. Ananya Desai',
-    designation: 'Lead Clinical Trainer',
-    specialty: 'Skin & Hair Aesthetics',
-    image: '/assets/images/faculty/trainer-1.jpg',
-    description:
-      'Guides certificate and workshop students through practical sessions in facials, peels, and clinic protocols with a strong focus on hygiene and technique.',
+      'BDS with a Fellowship in Aesthetic Medicine. Faculty for aesthetic training, guiding students through practical clinical skills and treatment protocols.',
   },
 ]
 
@@ -1739,49 +1732,124 @@ export const faqPage = {
 }
 
 /**
- * Gallery — drop images into public/assets/images/gallery/
- * then add an entry below (src, title, category, alt).
+ * Gallery — place files in public/assets/images/gallery/
+ * Photos: type 'photo'. Videos: type 'video' with optional poster.
  */
 export const galleryPage = {
   label: 'OUR SPACE',
   heading: 'Gallery',
   description:
-    'A look inside our clinic, treatments, and training sessions at Next India Institute of Aesthetics.',
-  emptyMessage: 'No images in this category yet.',
-  categories: [
+    'Moments from our clinic floor, treatment results, and hands-on training at Next India Institute of Aesthetics.',
+  emptyMessage: 'No media in this view yet.',
+  filters: [
     { id: 'all', label: 'All' },
-    { id: 'clinic', label: 'Clinic' },
-    { id: 'treatments', label: 'Treatments' },
-    { id: 'training', label: 'Training' },
+    { id: 'photo', label: 'Photos' },
+    { id: 'video', label: 'Videos' },
   ],
   items: [
     {
-      id: 1,
+      id: 'clinic-ambience',
+      type: 'photo',
       src: '/assets/images/gallery/clinic-ambience.png',
       title: 'Clinic Ambience',
-      category: 'clinic',
       alt: 'NIIA clinic interior and welcoming ambience',
     },
     {
-      id: 2,
+      id: 'clinic-moment-01',
+      type: 'video',
+      src: '/assets/images/gallery/clinic-moment-01.mp4',
+      poster: '/assets/images/gallery/clinic-moment-01-poster.jpg',
+      title: 'Hands-on Training',
+      alt: 'Faculty guiding a hands-on aesthetic training session',
+    },
+    {
+      id: 'lip-blush-result',
+      type: 'photo',
+      src: '/assets/images/gallery/lip-blush-result.jpeg',
+      title: 'Lip Blush Result',
+      alt: 'Before and after lip blush permanent makeup result',
+    },
+    {
+      id: 'clinic-moment-02',
+      type: 'video',
+      src: '/assets/images/gallery/clinic-moment-02.mp4',
+      poster: '/assets/images/gallery/clinic-moment-02-poster.jpg',
+      title: 'Treatment Session',
+      alt: 'Aesthetic treatment being performed at the clinic',
+    },
+    {
+      id: 'hair-treatment',
+      type: 'photo',
       src: '/assets/images/gallery/hair-treatment.jpg',
       title: 'Hair Treatment',
-      category: 'treatments',
       alt: 'Hair treatment session at NIIA clinic',
     },
     {
-      id: 3,
+      id: 'neck-rejuvenation-result',
+      type: 'photo',
+      src: '/assets/images/gallery/neck-rejuvenation-result.jpeg',
+      title: 'Neck Rejuvenation',
+      alt: 'Before and after neck rejuvenation treatment result',
+    },
+    {
+      id: 'clinic-moment-03',
+      type: 'video',
+      src: '/assets/images/gallery/clinic-moment-03.mp4',
+      poster: '/assets/images/gallery/clinic-moment-03-poster.jpg',
+      title: 'Clinical Practice',
+      alt: 'Clinical practice and patient care at NIIA',
+    },
+    {
+      id: 'laser-treatment',
+      type: 'photo',
       src: '/assets/images/gallery/laser-treatment.jpg',
       title: 'Laser Treatment',
-      category: 'treatments',
       alt: 'Laser treatment procedure at NIIA',
     },
     {
-      id: 4,
+      id: 'skin-rejuvenation-result',
+      type: 'photo',
+      src: '/assets/images/gallery/skin-rejuvenation-result.jpeg',
+      title: 'Skin Rejuvenation',
+      alt: 'Before and after facial skin rejuvenation result',
+    },
+    {
+      id: 'clinic-moment-04',
+      type: 'video',
+      src: '/assets/images/gallery/clinic-moment-04.mp4',
+      poster: '/assets/images/gallery/clinic-moment-04-poster.jpg',
+      title: 'Clinic Floor',
+      alt: 'A moment from the NIIA clinic floor',
+    },
+    {
+      id: 'jawline-enhancement-result',
+      type: 'photo',
+      src: '/assets/images/gallery/jawline-enhancement-result.jpeg',
+      title: 'Jawline Enhancement',
+      alt: 'Before and after jawline enhancement result',
+    },
+    {
+      id: 'clinic-moment-05',
+      type: 'video',
+      src: '/assets/images/gallery/clinic-moment-05.mp4',
+      poster: '/assets/images/gallery/clinic-moment-05-poster.jpg',
+      title: 'Faculty Mentorship',
+      alt: 'Faculty mentoring and consultation at NIIA',
+    },
+    {
+      id: 'workshop-training',
+      type: 'photo',
       src: '/assets/images/gallery/workshop-training.jpg',
       title: 'Workshop Training',
-      category: 'training',
       alt: 'Hands-on aesthetic medicine workshop at NIIA',
+    },
+    {
+      id: 'clinic-moment-06',
+      type: 'video',
+      src: '/assets/images/gallery/clinic-moment-06.mp4',
+      poster: '/assets/images/gallery/clinic-moment-06-poster.jpg',
+      title: 'Inside NIIA',
+      alt: 'Inside Next India Institute of Aesthetics',
     },
   ],
 }

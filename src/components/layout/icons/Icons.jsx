@@ -86,6 +86,14 @@ export function CloseIcon({ className = 'w-6 h-6' }) {
   )
 }
 
+export function PlayIcon({ className = 'w-6 h-6' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M8.25 5.25v13.5l11.25-6.75L8.25 5.25z" />
+    </svg>
+  )
+}
+
 export function CheckIcon({ className = 'w-4 h-4' }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -1,7 +1,15 @@
 import { Link } from 'react-router'
 import Logo from './Logo'
 import { footer, siteInfo } from '../../content/siteContent'
-import { FacebookIcon, InstagramIcon, LinkedinIcon, PhoneIcon, WhatsappIcon } from './icons/Icons'
+import {
+  EnvelopeIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  MapPinIcon,
+  PhoneIcon,
+  WhatsappIcon,
+} from './icons/Icons'
 import { phoneDigits } from '../../lib/formatPhone'
 
 const socialLinks = [
@@ -10,6 +18,19 @@ const socialLinks = [
   { name: 'LinkedIn', Icon: LinkedinIcon, href: siteInfo.linkedin },
   { name: 'WhatsApp', Icon: WhatsappIcon, href: `https://wa.me/${phoneDigits(siteInfo.whatsapp)}` },
 ]
+
+function ContactLink({ href, icon: Icon, children, external = false }) {
+  return (
+    <a
+      href={href}
+      className="flex items-start gap-2 transition-colors hover:text-nia-gold"
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
+      <Icon className="mt-0.5 h-4 w-4 shrink-0 text-nia-gold" />
+      <span>{children}</span>
+    </a>
+  )
+}
 
 export default function Footer() {
   return (
@@ -80,23 +101,25 @@ export default function Footer() {
             <h4 className="mb-4 text-sm font-semibold tracking-wider text-white">Contact Us</h4>
             <ul className="space-y-3 text-sm text-white/60">
               <li>
-                <a href={`tel:${phoneDigits(siteInfo.phone)}`} className="flex items-center gap-2 hover:text-nia-gold">
-                  <PhoneIcon className="w-4 h-4 shrink-0 text-nia-gold" />
+                <ContactLink href={`tel:${phoneDigits(siteInfo.phone)}`} icon={PhoneIcon}>
                   {siteInfo.phone}
-                </a>
+                </ContactLink>
               </li>
               <li>
-                <a href={`tel:${phoneDigits(siteInfo.phone2)}`} className="flex items-center gap-2 hover:text-nia-gold">
-                  <PhoneIcon className="w-4 h-4 shrink-0 text-nia-gold" />
+                <ContactLink href={`tel:${phoneDigits(siteInfo.phone2)}`} icon={PhoneIcon}>
                   {siteInfo.phone2}
-                </a>
+                </ContactLink>
               </li>
               <li>
-                <a href={`mailto:${siteInfo.email}`} className="hover:text-nia-gold">
+                <ContactLink href={`mailto:${siteInfo.email}`} icon={EnvelopeIcon}>
                   {siteInfo.email}
-                </a>
+                </ContactLink>
               </li>
-              <li>{siteInfo.address}</li>
+              <li>
+                <ContactLink href={siteInfo.mapsUrl} icon={MapPinIcon} external>
+                  {siteInfo.address}
+                </ContactLink>
+              </li>
             </ul>
           </div>
         </div>
