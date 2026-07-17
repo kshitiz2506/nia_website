@@ -13,9 +13,7 @@ import AccreditationsSection from '../components/home/AccreditationsSection'
 import { useReveal } from '../components/ui/Reveal'
 import { staticPageSeo } from '../content/seo'
 import { formatPhone, phoneDigits } from '../lib/formatPhone'
-
-const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80'
+import { PLACEHOLDER_IMAGES } from '../lib/placeholderImages'
 
 const phoneHref = `tel:${phoneDigits(siteInfo.phone)}`
 
@@ -34,7 +32,7 @@ function CourseCard({ item, index }) {
           alt={item.title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            e.target.src = PLACEHOLDER
+            e.target.src = PLACEHOLDER_IMAGES.courseCard
           }}
         />
       </div>

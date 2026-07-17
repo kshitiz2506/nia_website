@@ -4,9 +4,7 @@ import { ArrowRightIcon } from '../components/layout/icons/Icons'
 import PageMeta from '../components/layout/PageMeta'
 import { useReveal } from '../components/ui/Reveal'
 import { staticPageSeo } from '../content/seo'
-
-const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80'
+import { PLACEHOLDER_IMAGES } from '../lib/placeholderImages'
 
 function ServiceCard({ item, index }) {
   const { revealProps } = useReveal(index)
@@ -23,7 +21,7 @@ function ServiceCard({ item, index }) {
           alt={item.title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            e.target.src = PLACEHOLDER
+            e.target.src = PLACEHOLDER_IMAGES.treatmentCard
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

@@ -11,9 +11,7 @@ import {
 } from '../components/layout/icons/Icons'
 import PageMeta from '../components/layout/PageMeta'
 import { useReveal } from '../components/ui/Reveal'
-
-const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80'
+import { PLACEHOLDER_IMAGES } from '../lib/placeholderImages'
 
 function formatPrice(amount) {
   return new Intl.NumberFormat('en-IN').format(amount)
@@ -165,7 +163,7 @@ export default function CourseDetail() {
                   alt={course.title}
                   className="aspect-[4/3] w-full object-cover"
                   onError={(e) => {
-                    e.target.src = PLACEHOLDER
+                    e.target.src = PLACEHOLDER_IMAGES.detailHero
                   }}
                 />
               </div>

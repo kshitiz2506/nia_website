@@ -1,9 +1,7 @@
 import { testimonialsSection } from '../../content/siteContent'
 import { StarIcon } from '../layout/icons/Icons'
 import { useReveal } from '../ui/Reveal'
-
-const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80'
+import { PLACEHOLDER_IMAGES } from '../../lib/placeholderImages'
 
 function TestimonialCard({ item, index }) {
   const { revealProps } = useReveal(index)
@@ -27,7 +25,7 @@ function TestimonialCard({ item, index }) {
           alt={item.name}
           className="h-10 w-10 rounded-full object-cover"
           onError={(e) => {
-            e.target.src = PLACEHOLDER
+            e.target.src = PLACEHOLDER_IMAGES.testimonial
           }}
         />
         <div>

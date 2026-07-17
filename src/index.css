@@ -5,8 +5,6 @@
   --color-nia-card: #141414;
   --color-nia-dark-light: #1a1a1a;
 
-
-
   --color-nia-gold: #f6d072;
   --color-nia-gold-light: #ebb54e;
   --color-nia-gold-dark: #b28537;
@@ -215,6 +213,49 @@ h4 {
   outline-offset: 2px;
 }
 
+/* Secondary CTA — gold outline that fills with the metallic gradient on hover */
+.btn-gold-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--color-nia-gold);
+  background-color: transparent;
+  background-image: none;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    background-image 0.25s ease,
+    filter 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-gold-outline:hover {
+  border-color: transparent;
+  background-color: var(--color-nia-gold-light);
+  background-image: var(--gradient-gold-metallic);
+  color: var(--color-nia-dark);
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 18px color-mix(in srgb, var(--color-nia-gold) 28%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-highlight) 65%, transparent),
+    inset 0 -1px 0 color-mix(in srgb, var(--color-nia-gold-metallic-shadow) 40%, transparent);
+}
+
+.btn-gold-outline:focus-visible {
+  outline: 2px solid var(--color-nia-gold);
+  outline-offset: 2px;
+}
+
 .btn-gold--md {
   min-height: 2.75rem;
   padding: 0.75rem 1.125rem;
@@ -268,14 +309,13 @@ h4 {
   transition: background-color 0.3s;
 }
 
-
 .navbar {
-  height: 4rem; 
+  height: 4rem;
 }
 
 @media (min-width: 1024px) {
   .navbar {
-    height: 5rem; 
+    height: 5rem;
   }
 }
 

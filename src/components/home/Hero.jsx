@@ -2,9 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router'
 import { heroSlides, heroImages } from '../../content/siteContent'
 import { ChevronLeftIcon, ChevronRightIcon } from '../layout/icons/Icons'
-
-const PLACEHOLDER_HERO =
-  'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=80'
+import { PLACEHOLDER_IMAGES } from '../../lib/placeholderImages'
 
 export default function Hero() {
   const [current, setCurrent] = useState(0)
@@ -27,7 +25,7 @@ export default function Hero() {
           key={i}
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
           style={{
-            backgroundImage: `url(${heroImages[i] || PLACEHOLDER_HERO})`,
+            backgroundImage: `url(${heroImages[i] || PLACEHOLDER_IMAGES.hero})`,
             opacity: i === current ? 1 : 0,
           }}
         />
@@ -52,10 +50,7 @@ export default function Hero() {
           <Link to="/clinic" className="btn-gold btn-gold--lg min-w-[220px]">
             Explore Clinic Services
           </Link>
-          <Link
-            to="/institute"
-            className="min-w-[220px] rounded-md border border-nia-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-white transition-colors hover:bg-nia-gold hover:text-nia-dark"
-          >
+          <Link to="/institute" className="btn-gold-outline btn-gold--lg min-w-[220px]">
             View Institute Courses
           </Link>
         </div>

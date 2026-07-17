@@ -126,12 +126,12 @@ export const accreditations = {
       logo: '/assets/images/certifications/ISO.png',
     },
     {
-      id: 'nsdc',
-      name: 'NSDC',
-      fullName: 'National Skill Development Corporation',
+      id: 'skill-india',
+      name: 'Skill India',
+      fullName: 'Skill India',
       description:
-        'Aligned with India\'s national skilling ecosystem for industry-relevant aesthetic medicine training.',
-      logo: '/assets/images/certifications/nsdc.png',
+        'Aligned with India\'s national skilling mission for industry-relevant aesthetic medicine training.',
+      logo: '/assets/images/certifications/skill-india.png',
     },
     {
       id: 'bnwssc',
@@ -327,7 +327,7 @@ const instituteCourseList = [
     image: '/assets/images/courses/aesthetic-medicine.jpg',
     duration: '1.5 Months',
     format: 'On-Campus',
-    price: "150000",
+    price: 150000,
     curriculum: [
       {
         title: 'Facial Anatomy & Aging',
@@ -630,7 +630,7 @@ const instituteCourseList = [
     ],
   },
   {
-    id: 'botox-masterclass',
+    id: 'level-1-filler-workshop',
     program: 'workshop',
     category: 'Workshop',
     title: 'Level 1 Filler Workshop',
@@ -1301,7 +1301,7 @@ export const treatmentsSection = {
       image: '/assets/images/treatments/body.jpg',
       href: '/clinic/body',
       offerings: [
-        'Fat Reduction',  
+        'Fat Reduction',
         'Inch Loss Treatments',
         'Body Sculpting',
         'Cellulite Reduction',
@@ -1514,9 +1514,10 @@ export const aboutFeaturedFaculty = {
   specialty: 'Aesthetic Medicine & Neurorehabilitation',
   image: '/assets/images/faculty/vipul-shandilya.jpeg',
   bio:
-    'Dr Vipul Shandilya is a renowned Aesthetic Medicine Consultant and Neurorehabilitation specialist. With over 20 years of medical experience, he is an international trainer for Allergan.',
+    'Dr Vipul Shandilya is a renowned Aesthetic Medicine Consultant and Neurorehabilitation specialist. With over 20 years of medical experience, he is a globally renowned injectable trainer and an international trainer for Allergan.',
   credentials: [
     'Aesthetic Medicine Consultant',
+    'Globally Renowned Injectable Trainer',
     'Neurorehabilitation Specialist',
     '20+ Years Medical Experience',
     'International Trainer — Allergan',
@@ -1527,20 +1528,20 @@ export const aboutFaculty = [
   {
     id: 'shweta-pradeep-manchanda',
     name: 'Dr. Shweta Pradeep Manchanda',
-    designation: 'Senior Faculty — Aesthetic Medicine',
+    designation: 'Senior Faculty — Botox, Fillers & Threads',
     specialty: 'Dermatology & Aesthetic Medicine',
     image: '/assets/images/faculty/shweta-pradeep.jpeg',
     description:
-      'Gold medalist and top dermatologist at Skin Clinic in Delhi. Holds MBBS, MD (Dermatology, Venereology & Leprosy), and fellowships in aesthetic medicine. Senior faculty teaching aesthetic medicine with practical knowledge and 18 years of experience.',
+      'Gold medalist and top dermatologist at Skin Clinic in Delhi. Holds MBBS, MD (Dermatology, Venereology & Leprosy), and fellowships in aesthetic medicine. Senior faculty teaching aesthetic medicine with practical knowledge, including Botox, fillers, and threads, with 18 years of experience.',
   },
   {
     id: 'sana',
     name: 'Dr. Sana',
-    designation: 'Trainer — Botox, Fillers & Threads',
+    designation: 'Permanent Makeup Specialist',
     specialty: 'Aesthetic Medicine · Punjab',
     image: '/assets/images/faculty/sana.jpeg',
     description:
-      'BHMS (Punjab) with a Fellowship in Aesthetic Medicine (USA). Post-operative cancer patient and vitiligo permanent makeup expert. Trainer in Botox, fillers, and threads with 7 years of experience.',
+      'BHMS (Punjab) with a Fellowship in Aesthetic Medicine (USA). Post-operative cancer patient and vitiligo permanent makeup expert with 7 years of experience.',
   },
   {
     id: 'poornima-tyagi',

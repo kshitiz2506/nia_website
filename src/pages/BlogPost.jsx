@@ -3,9 +3,7 @@ import { blogPostCta, getBlogBySlug } from '../content/siteContent'
 import { ArrowRightIcon, CalendarIcon } from '../components/layout/icons/Icons'
 import PageMeta from '../components/layout/PageMeta'
 import { useReveal } from '../components/ui/Reveal'
-
-const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80'
+import { PLACEHOLDER_IMAGES } from '../lib/placeholderImages'
 
 function BodyParagraph({ text, index }) {
   const { revealProps } = useReveal(index)
@@ -67,7 +65,7 @@ export default function BlogPost() {
               alt={post.title}
               className="aspect-[16/9] w-full object-cover"
               onError={(e) => {
-                e.target.src = PLACEHOLDER
+                e.target.src = PLACEHOLDER_IMAGES.detailHero
               }}
             />
           </div>

@@ -2,9 +2,7 @@ import { Link } from 'react-router'
 import { coursesSection } from '../../content/siteContent'
 import { ArrowRightIcon, CheckIcon, AcademicIcon } from '../layout/icons/Icons'
 import { useReveal } from '../ui/Reveal'
-
-const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80'
+import { PLACEHOLDER_IMAGES } from '../../lib/placeholderImages'
 
 function CourseCard({ item, index }) {
   const { revealProps } = useReveal(index)
@@ -20,7 +18,7 @@ function CourseCard({ item, index }) {
           alt={item.title}
           className="h-full w-full object-cover"
           onError={(e) => {
-            e.target.src = PLACEHOLDER
+            e.target.src = PLACEHOLDER_IMAGES.courseCard
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-nia-card via-transparent to-transparent" />
@@ -40,10 +38,7 @@ function CourseCard({ item, index }) {
             </li>
           ))}
         </ul>
-        <Link
-          to={item.href}
-          className="mt-6 block border border-nia-gold py-3 text-center text-sm font-medium text-nia-gold transition-colors hover:bg-nia-gold hover:text-nia-dark"
-        >
+        <Link to={item.href} className="btn-gold btn-gold--md mt-6 w-full">
           {item.cta}
         </Link>
       </div>

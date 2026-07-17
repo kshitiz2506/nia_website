@@ -11,9 +11,7 @@ import {
   aboutPage,
 } from '../content/siteContent'
 import { staticPageSeo } from '../content/seo'
-
-const FACULTY_PLACEHOLDER =
-  'https://images.unsplash.com/photo-1612349317150-e413f4a5b16d?w=400&q=80'
+import { PLACEHOLDER_IMAGES } from '../lib/placeholderImages'
 
 function FacultyImage({ src, alt, className = '' }) {
   return (
@@ -22,7 +20,7 @@ function FacultyImage({ src, alt, className = '' }) {
       alt={alt}
       className={className}
       onError={(e) => {
-        e.target.src = FACULTY_PLACEHOLDER
+        e.target.src = PLACEHOLDER_IMAGES.faculty
       }}
     />
   )
@@ -48,7 +46,7 @@ function FeaturedFaculty({ faculty }) {
                     />
                   </div>
                 </div>
-                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-nia-gold px-4 py-1 text-xs font-semibold tracking-wide text-nia-dark">
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full gold-metallic px-4 py-1 text-xs font-semibold tracking-wide text-nia-dark">
                   Featured
                 </span>
               </div>

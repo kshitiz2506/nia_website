@@ -4,7 +4,7 @@ export const siteName = siteInfo.fullName
 export const defaultDescription =
   'Premium dermatology clinic and aesthetic medicine institute in India. Advanced skin, hair, and anti-aging treatments plus fellowship and certificate programs.'
 
-export const defaultOgImage = '/assets/images/logo/clinic_logo.jpeg'
+export const defaultOgImage = '/assets/images/logo/clinic_logo.png'
 
 export function getSiteUrl() {
   const url = import.meta.env.VITE_SITE_URL || 'https://www.nianextindia.com'

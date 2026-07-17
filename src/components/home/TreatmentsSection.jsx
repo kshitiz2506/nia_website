@@ -2,9 +2,7 @@ import { Link } from 'react-router'
 import { treatmentsSection } from '../../content/siteContent'
 import { ArrowRightIcon } from '../layout/icons/Icons'
 import { useReveal } from '../ui/Reveal'
-
-const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80'
+import { PLACEHOLDER_IMAGES } from '../../lib/placeholderImages'
 
 function TreatmentCard({ item, index }) {
   const { revealProps } = useReveal(index)
@@ -19,7 +17,7 @@ function TreatmentCard({ item, index }) {
         alt={item.title}
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         onError={(e) => {
-          e.target.src = PLACEHOLDER
+          e.target.src = PLACEHOLDER_IMAGES.treatmentCard
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />

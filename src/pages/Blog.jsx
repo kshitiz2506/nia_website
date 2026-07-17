@@ -5,9 +5,7 @@ import { ArrowRightIcon, SearchIcon } from '../components/layout/icons/Icons'
 import PageMeta from '../components/layout/PageMeta'
 import { useReveal } from '../components/ui/Reveal'
 import { staticPageSeo } from '../content/seo'
-
-const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80'
+import { PLACEHOLDER_IMAGES } from '../lib/placeholderImages'
 
 function BlogCard({ item, index }) {
   const { revealProps } = useReveal(index)
@@ -24,7 +22,7 @@ function BlogCard({ item, index }) {
           alt={item.title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            e.target.src = PLACEHOLDER
+            e.target.src = PLACEHOLDER_IMAGES.blogCard
           }}
         />
       </div>
