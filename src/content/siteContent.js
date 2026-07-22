@@ -1400,7 +1400,7 @@ export const coursesSection = {
       id: 'workshops',
       title: 'Workshops',
       description: 'Weekend workshops and masterclasses on the latest techniques and technologies in aesthetic medicine.',
-      image: '/assets/images/courses/workshops.jpg',
+      image: '/assets/images/courses/workshops.png',
       href: '/institute#workshop-programs',
       features: [
         '1-3 day sessions',
